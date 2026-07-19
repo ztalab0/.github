@@ -9,7 +9,7 @@
 
   <!-- Status & Metrics Badges -->
   <p align="center">
-    <a href="https://ztalab0.github.io/ztalab0"><img src="https://img.shields.io/badge/Official__Portal-ZTA__LAB-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Official Portal"></a>
+    <a href="https://ztalab.com"><img src="https://img.shields.io/badge/Official__Portal-ZTA__LAB-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Official Portal"></a>
     <a href="#impact"><img src="https://img.shields.io/badge/Completed__Projects-25K%2B-0B2B26?style=for-the-badge&logo=rocket&logoColor=26E09C" alt="Completed Projects"></a>
     <a href="#about"><img src="https://img.shields.io/badge/Client__Retention-99.8%25-163832?style=for-the-badge&logo=check-circle&logoColor=26E09C" alt="Client Retention"></a>
     <a href="mailto:hello@ztalab.com"><img src="https://img.shields.io/badge/Inquiry-hello%40ztalab.com-235347?style=for-the-badge&logo=gmail&logoColor=26E09C" alt="Email Direct"></a>
