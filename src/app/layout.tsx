@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.jpeg",
-        url: "/og-image.jpeg",
         width: 1200,
         height: 628,
         alt: "ZTA Lab - Creative Technology & Digital Agency",
