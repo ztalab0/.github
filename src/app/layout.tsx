@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
-import { Alatsi, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const alatsi = Alatsi({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-alatsi",
-});
-
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ztalab.com"),
@@ -127,12 +114,16 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        alatsi.variable,
-        poppins.variable,
         "font-sans",
       )}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alatsi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

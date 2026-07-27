@@ -4,14 +4,13 @@ import { Sparkles } from "lucide-react";
 
 export default function BrandMarquee() {
   const brandLogos = [
-    { name: "MobileTech", code: "MOBILE TECH" },
-    { name: "Western", code: "WESTERN" },
-    { name: "AudioWave", code: "AUDIO WAVE" },
-    { name: "Pandora", code: "PANDORA" },
-    { name: "Pine Forest", code: "PINE FOREST" },
-    { name: "Apex Labs", code: "APEX LABS" },
-    { name: "Cipher Logic", code: "CIPHER LOGIC" },
-    { name: "NextGen AI", code: "NEXTGEN AI" },
+    { name: "Aura Commerce", code: "AURA COMMERCE" },
+    { name: "Nexus Ecosystem", code: "NEXUS ECOSYSTEM" },
+    { name: "Verde Living", code: "VERDE LIVING" },
+    { name: "Cipher Growth", code: "CIPHER GROWTH" },
+    { name: "Solutio Tech", code: "SOLUTIO TECH" },
+    { name: "Elevate Studio", code: "ELEVATE STUDIO" },
+    { name: "Apex Digital", code: "APEX DIGITAL" },
   ];
 
   return (

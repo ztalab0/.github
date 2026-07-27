@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Left Vertical Social Sidebar with Official Icons */}
+      {/* Left Vertical Social Sidebar with Official Links */}
       <div className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-5">
         <span className="text-[11px] font-bold tracking-[0.25em] text-muted-foreground uppercase [writing-mode:vertical-lr] rotate-180">
           CONNECT WITH US
@@ -22,6 +22,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"
+            title="Facebook"
             className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
           >
             <FacebookIcon className="w-4 h-4" />
@@ -31,6 +32,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
+            title="Instagram"
             className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
           >
             <InstagramIcon className="w-4 h-4" />
@@ -40,6 +42,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
+            title="LinkedIn"
             className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
           >
             <LinkedinIcon className="w-4 h-4" />
@@ -49,6 +52,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="Dribbble"
+            title="Dribbble"
             className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
           >
             <DribbbleIcon className="w-4 h-4" />
@@ -58,6 +62,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"
+            title="WhatsApp (+8801976540046)"
             className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
           >
             <WhatsappIcon className="w-4 h-4" />
@@ -103,7 +108,7 @@ export default function Hero() {
             <div className="mt-12 pt-8 border-t border-border/60 grid grid-cols-2 sm:grid-cols-2 gap-8 max-w-md">
               <div className="flex flex-col">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-foreground">50</span>
+                  <span className="text-4xl font-extrabold text-foreground">10</span>
                   <span className="text-3xl font-extrabold text-primary">+</span>
                 </div>
                 <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mt-1">
@@ -137,30 +142,13 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating Trust Badge */}
-            <div className="absolute top-2 right-0 sm:-right-4 glass-panel border border-border rounded-2xl p-3 sm:p-4 shadow-2xl flex items-center gap-3 animate-pulse-glow">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold">
-                5★
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-foreground mt-0.5">
-                  High-Performance Execution
-                </span>
-              </div>
-            </div>
-
-            {/* Floating Bottom Badge */}
+            {/* Floating Bottom Badge - Clean ZTA Lab Badge */}
             <div className="absolute -bottom-4 left-0 sm:left-4 glass-panel border border-border rounded-2xl p-3 shadow-2xl flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-secondary text-primary flex items-center justify-center font-black border border-border">
                 ZTA
               </div>
               <div className="pr-3">
-                <p className="text-xs font-bold text-foreground">Creative Technology</p>
+                <p className="text-xs font-bold text-foreground">ZTA Lab</p>
                 <p className="text-[10px] text-muted-foreground">Dhaka, Bangladesh</p>
               </div>
             </div>

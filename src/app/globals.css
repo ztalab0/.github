@@ -37,10 +37,10 @@
 }
 
 @theme inline {
-  --font-alatsi: var(--font-alatsi);
-  --font-poppins: var(--font-poppins);
-  --font-sans: var(--font-poppins), system-ui, sans-serif;
-  --font-heading: var(--font-alatsi), sans-serif;
+  --font-alatsi: 'Alatsi', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-heading: 'Alatsi', sans-serif;
 
   --color-ring: var(--ring);
   --color-input: var(--input);

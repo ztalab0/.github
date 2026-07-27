@@ -2,14 +2,14 @@ import MouseFollower from "@/components/MouseFollower";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BrandMarquee from "@/components/BrandMarquee";
-import AboutSection from "@/components/AboutSection";
-import CompletedProjects from "@/components/CompletedProjects";
 import OurServices from "@/components/OurServices";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import CompletedProjects from "@/components/CompletedProjects";
+import AboutSection from "@/components/AboutSection";
 import TeamSection from "@/components/TeamSection";
 import ImpactStats from "@/components/ImpactStats";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -18,18 +18,22 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BrandMarquee />
-      <AboutSection />
-      {/* Completed Projects moved UP */}
-      <CompletedProjects />
-      {/* Our Services moved DOWN */}
+      {/* 1st Tab in Nav: Our Services */}
       <OurServices />
-      <TestimonialsSection />
+      {/* 2nd Tab in Nav: Portfolio */}
+      <CompletedProjects />
+      {/* 3rd Tab in Nav: Who Are We */}
+      <AboutSection />
+      {/* 4th Tab in Nav: Team */}
       <TeamSection />
+      {/* Impact Stats Banner */}
       <ImpactStats />
-      {/* Contact Us Form added */}
+      {/* 5th Tab in Nav: Contact Us */}
       <ContactSection />
-      {/* Simplified Footer */}
+      {/* Footer */}
       <Footer />
+      {/* Floating Interactive Chatbot Widget */}
+      <Chatbot />
     </main>
   );
 }

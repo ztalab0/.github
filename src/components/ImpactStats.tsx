@@ -2,7 +2,7 @@
 
 export default function ImpactStats() {
   const stats = [
-    { value: "50+", label: "Projects Delivered" },
+    { value: "10+", label: "Projects Delivered" },
     { value: "100%", label: "Client Satisfaction" },
     { value: "24/7", label: "Dedicated Support" },
     { value: "100%", label: "On-Time Delivery" },

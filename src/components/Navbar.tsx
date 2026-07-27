@@ -22,7 +22,7 @@ export default function Navbar() {
   const navItems = [
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
-    { label: "Feedbacks", href: "#feedbacks" },
+    { label: "Who Are We", href: "#about" },
     { label: "Team", href: "#team" },
   ];
 
@@ -36,12 +36,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Official Brand Logo */}
+          {/* Official Brand Logo - Scaled Up & Visible */}
           <a href="#hero" className="flex items-center gap-3 group">
             <img
               src="/assets/LOGO/SVG Lgos/White with no BG.svg"
               alt="ZTA Lab Logo"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
             />
           </a>
 

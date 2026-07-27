@@ -17,22 +17,28 @@ export default function Footer() {
             <img
               src="/assets/LOGO/SVG Lgos/White with no BG.svg"
               alt="ZTA Lab Logo"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
             />
           </a>
 
           {/* Quick Call Callout Box */}
           <div className="flex items-center gap-4 bg-secondary/80 border border-border px-6 py-3.5 rounded-full shadow-lg">
-            <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40">
+            <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40 shrink-0">
               <Phone className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
               <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
                 Direct Contact
               </span>
-              <a href="tel:+8801976540046" className="text-sm font-extrabold text-foreground hover:text-primary transition-colors">
-                +8801976540046
-              </a>
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-extrabold text-foreground">
+                <a href="tel:+8801976540046" className="hover:text-primary transition-colors">
+                  +8801976540046
+                </a>
+                <span className="text-muted-foreground">|</span>
+                <a href="tel:+8801712345678" className="hover:text-primary transition-colors">
+                  +8801712345678
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -71,7 +77,7 @@ export default function Footer() {
                 <a href="#portfolio" className="hover:text-primary transition-colors">Portfolio</a>
               </li>
               <li>
-                <a href="#feedbacks" className="hover:text-primary transition-colors">Feedbacks</a>
+                <a href="#about" className="hover:text-primary transition-colors">Who Are We</a>
               </li>
               <li>
                 <a href="#team" className="hover:text-primary transition-colors">Team</a>

@@ -21,8 +21,8 @@ export default function AboutSection() {
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden border border-border shadow-2xl group">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-                    alt="ZTA Lab Engineering Team"
+                    src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80"
+                    alt="ZTA Lab Agile Engineering Workflow"
                     className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -49,8 +49,8 @@ export default function AboutSection() {
                 </div>
                 <div className="rounded-3xl overflow-hidden border border-border shadow-2xl group">
                   <img
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
-                    alt="Digital Strategy Workshop"
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80"
+                    alt="Result-Oriented Digital Growth Strategy"
                     className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

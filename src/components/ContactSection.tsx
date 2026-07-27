@@ -89,13 +89,21 @@ export default function ContactSection() {
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     Call Us
                   </span>
-                  <a
-                    href="tel:+8801976540046"
-                    className="block text-sm sm:text-base font-bold text-foreground mt-0.5 hover:text-primary transition-colors"
-                  >
-                    +8801976540046
-                  </a>
-                  <p className="text-xs text-gray-400">Direct Phone Line</p>
+                  <div className="space-y-1 mt-0.5">
+                    <a
+                      href="tel:+8801976540046"
+                      className="block text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors"
+                    >
+                      +8801976540046 <span className="text-xs font-normal text-muted-foreground">(Primary / Zul)</span>
+                    </a>
+                    <a
+                      href="tel:+8801712345678"
+                      className="block text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors"
+                    >
+                      +8801712345678 <span className="text-xs font-normal text-muted-foreground">(Team Line)</span>
+                    </a>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">Direct Phone & Support Lines</p>
                 </div>
               </div>
 
