@@ -1,5 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, DribbbleIcon, WhatsappIcon } from "./SocialIcons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  DribbbleIcon,
+  WhatsappIcon,
+} from "./SocialIcons";
 
 export default function Hero() {
   return (
@@ -16,7 +22,7 @@ export default function Hero() {
         <span className="text-[11px] font-bold tracking-[0.25em] text-muted-foreground uppercase [writing-mode:vertical-lr] rotate-180">
           CONNECT WITH US
         </span>
-        <div className="w-[1px] h-12 bg-border" />
+        <div className="w-px h-12 bg-border" />
         <div className="flex flex-col gap-4 text-gray-400">
           <a
             href="https://facebook.com"
@@ -77,12 +83,17 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Single Strong Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-foreground leading-[1.1] tracking-tight">
-              Build. Launch. <span className="text-primary drop-shadow-[0_0_25px_rgba(38,224,156,0.35)]">Grow.</span>
+              Build. Launch.{" "}
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(38,224,156,0.35)]">
+                Grow.
+              </span>
             </h1>
 
             {/* Subheadline */}
             <p className="mt-6 text-base sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              At ZTA Lab, we craft high-performance websites, powerful applications, and data-driven digital marketing strategies to help businesses scale faster.
+              At ZTA Lab, we craft high-performance websites, powerful
+              applications, and data-driven digital marketing strategies to help
+              businesses scale faster.
             </p>
 
             {/* CTA Buttons */}
@@ -109,8 +120,12 @@ export default function Hero() {
             <div className="mt-12 pt-8 border-t border-border/60 grid grid-cols-2 sm:grid-cols-2 gap-8 max-w-md">
               <div className="flex flex-col">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-foreground">10</span>
-                  <span className="text-3xl font-extrabold text-primary">+</span>
+                  <span className="text-4xl font-extrabold text-foreground">
+                    10
+                  </span>
+                  <span className="text-3xl font-extrabold text-primary">
+                    +
+                  </span>
                 </div>
                 <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mt-1">
                   Digital Solutions Built
@@ -119,8 +134,12 @@ export default function Hero() {
 
               <div className="flex flex-col">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-foreground">100</span>
-                  <span className="text-3xl font-extrabold text-primary">%</span>
+                  <span className="text-4xl font-extrabold text-foreground">
+                    100
+                  </span>
+                  <span className="text-3xl font-extrabold text-primary">
+                    %
+                  </span>
                 </div>
                 <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mt-1">
                   Client Satisfaction
@@ -132,14 +151,14 @@ export default function Hero() {
           {/* Hero Right Graphic Composition */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
             {/* Main Frame */}
-            <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-3xl p-3 bg-gradient-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
+            <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-3xl p-3 bg-linear-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                   alt="ZTA Lab Digital Agency Team"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-transparent" />
               </div>
             </div>
 
@@ -150,7 +169,9 @@ export default function Hero() {
               </div>
               <div className="pr-3">
                 <p className="text-xs font-bold text-foreground">ZTA Lab</p>
-                <p className="text-[10px] text-muted-foreground">Dhaka, Bangladesh</p>
+                <p className="text-[10px] text-muted-foreground">
+                  Dhaka, Bangladesh
+                </p>
               </div>
             </div>
           </div>

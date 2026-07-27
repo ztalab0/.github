@@ -1,7 +1,17 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, Sparkles, ArrowRight, Phone, Mail, Bot, User } from "lucide-react";
+import {
+  MessageSquare,
+  X,
+  Send,
+  Sparkles,
+  ArrowRight,
+  Phone,
+  Mail,
+  Bot,
+  User,
+} from "lucide-react";
 import { WhatsappIcon } from "./SocialIcons";
 
 interface Message {
@@ -136,20 +146,51 @@ export default function Chatbot() {
     };
 
     const lower = userText.toLowerCase();
-    let replyText = "Thank you for your message! How would you like to proceed?";
+    let replyText =
+      "Thank you for your message! How would you like to proceed?";
     let ctaObj: Message["cta"] | undefined = undefined;
 
-    if (lower.includes("price") || lower.includes("cost") || lower.includes("budget") || lower.includes("quote")) {
-      replyText = "At ZTA Lab, we offer custom tailored solutions based on project requirements. Let's discuss your scope directly!";
-      ctaObj = { text: "Request a Custom Quote", href: "#contact", icon: "contact" };
-    } else if (lower.includes("phone") || lower.includes("call") || lower.includes("number")) {
-      replyText = "You can call us directly at +8801976540046 or +8801712345678!";
-    } else if (lower.includes("service") || lower.includes("dev") || lower.includes("web") || lower.includes("app")) {
-      replyText = "We build custom websites, full-stack web platforms, mobile apps, and execute data-driven digital marketing campaigns.";
-      ctaObj = { text: "View Our Services", href: "#services", icon: "contact" };
+    if (
+      lower.includes("price") ||
+      lower.includes("cost") ||
+      lower.includes("budget") ||
+      lower.includes("quote")
+    ) {
+      replyText =
+        "At ZTA Lab, we offer custom tailored solutions based on project requirements. Let's discuss your scope directly!";
+      ctaObj = {
+        text: "Request a Custom Quote",
+        href: "#contact",
+        icon: "contact",
+      };
+    } else if (
+      lower.includes("phone") ||
+      lower.includes("call") ||
+      lower.includes("number")
+    ) {
+      replyText =
+        "You can call us directly at +8801976540046 or +8801712345678!";
+    } else if (
+      lower.includes("service") ||
+      lower.includes("dev") ||
+      lower.includes("web") ||
+      lower.includes("app")
+    ) {
+      replyText =
+        "We build custom websites, full-stack web platforms, mobile apps, and execute data-driven digital marketing campaigns.";
+      ctaObj = {
+        text: "View Our Services",
+        href: "#services",
+        icon: "contact",
+      };
     } else {
-      replyText = "Got it! Our team is available on WhatsApp or through our direct contact form.";
-      ctaObj = { text: "Chat on WhatsApp", href: "https://wa.me/8801976540046", icon: "whatsapp" };
+      replyText =
+        "Got it! Our team is available on WhatsApp or through our direct contact form.";
+      ctaObj = {
+        text: "Chat on WhatsApp",
+        href: "https://wa.me/8801976540046",
+        icon: "whatsapp",
+      };
     }
 
     const botMsg: Message = {
@@ -191,7 +232,7 @@ export default function Chatbot() {
       {isOpen && (
         <div className="w-[90vw] max-w-[380px] sm:w-[400px] h-[520px] bg-card border border-border/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fadeIn backdrop-blur-xl">
           {/* Top Chat Header */}
-          <div className="bg-gradient-to-r from-secondary via-card to-secondary p-4 border-b border-border/60 flex items-center justify-between">
+          <div className="bg-linear-to-r from-secondary via-card to-secondary p-4 border-b border-border/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-md">
                 <Bot className="w-5 h-5" />
@@ -244,11 +285,15 @@ export default function Chatbot() {
                         setIsOpen(false);
                       }
                     }}
-                    target={msg.cta.href.startsWith("http") ? "_blank" : "_self"}
+                    target={
+                      msg.cta.href.startsWith("http") ? "_blank" : "_self"
+                    }
                     rel="noreferrer"
                     className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground font-bold text-xs shadow-md hover:opacity-90 transition-opacity"
                   >
-                    {msg.cta.icon === "whatsapp" && <WhatsappIcon className="w-3.5 h-3.5" />}
+                    {msg.cta.icon === "whatsapp" && (
+                      <WhatsappIcon className="w-3.5 h-3.5" />
+                    )}
                     <span>{msg.cta.text}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>

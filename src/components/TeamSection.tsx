@@ -33,7 +33,10 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-24 bg-card/60 border-t border-border/50 relative">
+    <section
+      id="team"
+      className="py-24 bg-card/60 border-t border-border/50 relative"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-background border border-border w-fit mb-3">
@@ -46,7 +49,8 @@ export default function TeamSection() {
             Meet the Minds Behind ZTA Lab
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-            A collective of passionate engineers and digital strategists committed to precision and innovation.
+            A collective of passionate engineers and digital strategists
+            committed to precision and innovation.
           </p>
         </div>
 
@@ -58,13 +62,13 @@ export default function TeamSection() {
             >
               <div>
                 {/* Team Portrait Image Box with 3:4 Aspect Ratio */}
-                <div className="relative w-full aspect-[3/4] overflow-hidden bg-secondary">
+                <div className="relative w-full aspect-3/4 overflow-hidden bg-secondary">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-linear-to-t from-card via-card/10 to-transparent opacity-90" />
                 </div>
 
                 <div className="p-6 text-center">

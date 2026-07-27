@@ -13,7 +13,9 @@ import {
 
 export default function CompletedProjects() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
+    null,
+  );
 
   const projects: ProjectData[] = [
     {
@@ -96,7 +98,10 @@ export default function CompletedProjects() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-20 sm:py-24 bg-background relative border-t border-border/40">
+    <section
+      id="portfolio"
+      className="py-20 sm:py-24 bg-background relative border-t border-border/40"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
@@ -125,7 +130,12 @@ export default function CompletedProjects() {
 
         {/* Category Filter Pills */}
         <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-8 sm:mb-10 pb-2 border-b border-border/40">
-          {["All", "Website Design & Development", "App Development", "Digital Marketing"].map((cat) => (
+          {[
+            "All",
+            "Website Design & Development",
+            "App Development",
+            "Digital Marketing",
+          ].map((cat) => (
             <button
               key={cat}
               type="button"
@@ -163,7 +173,7 @@ export default function CompletedProjects() {
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-linear-to-t from-card via-card/20 to-transparent opacity-80" />
                   </div>
 
                   {/* Bottom Card Overview */}
@@ -209,7 +219,10 @@ export default function CompletedProjects() {
       </div>
 
       {/* Project Details Modal */}
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }
