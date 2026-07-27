@@ -116,7 +116,7 @@ export default function Footer() {
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/zta-lab"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"

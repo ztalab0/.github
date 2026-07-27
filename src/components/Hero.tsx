@@ -1,11 +1,12 @@
-"use client";
-
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, DribbbleIcon, WhatsappIcon } from "./SocialIcons";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-background">
+    <section
+      id="hero"
+      className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-background"
+    >
       {/* Background Decorative Subtle Radial Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
@@ -23,7 +24,7 @@ export default function Hero() {
             rel="noreferrer"
             aria-label="Facebook"
             title="Facebook"
-            className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <FacebookIcon className="w-4 h-4" />
           </a>
@@ -33,17 +34,17 @@ export default function Hero() {
             rel="noreferrer"
             aria-label="Instagram"
             title="Instagram"
-            className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <InstagramIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/zta-lab"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
             title="LinkedIn"
-            className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <LinkedinIcon className="w-4 h-4" />
           </a>
@@ -53,7 +54,7 @@ export default function Hero() {
             rel="noreferrer"
             aria-label="Dribbble"
             title="Dribbble"
-            className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <DribbbleIcon className="w-4 h-4" />
           </a>
@@ -63,7 +64,7 @@ export default function Hero() {
             rel="noreferrer"
             aria-label="WhatsApp"
             title="WhatsApp (+8801976540046)"
-            className="hover:text-primary transition-colors p-2 rounded-xl hover:bg-card border border-transparent hover:border-border"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <WhatsappIcon className="w-4 h-4" />
           </a>
@@ -88,17 +89,17 @@ export default function Hero() {
             <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-primary/25"
+                className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
               >
                 Get Started
               </a>
 
               <a
                 href="#portfolio"
-                className="inline-flex items-center gap-3 bg-card hover:bg-secondary border border-border text-foreground px-7 py-4 rounded-full font-bold text-sm transition-all duration-300 group hover:border-muted-foreground"
+                className="inline-flex items-center gap-3 bg-card hover:bg-secondary border border-border text-foreground px-7 py-4 rounded-full font-bold text-sm transition-colors group hover:border-muted-foreground"
               >
                 <span>View Our Work</span>
-                <span className="w-7 h-7 rounded-full bg-secondary group-hover:bg-primary text-primary group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
+                <span className="w-7 h-7 rounded-full bg-secondary text-primary flex items-center justify-center transition-colors">
                   <ArrowUpRight className="w-4 h-4" />
                 </span>
               </a>
@@ -130,13 +131,13 @@ export default function Hero() {
 
           {/* Hero Right Graphic Composition */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
-            {/* Main Glowing Frame */}
+            {/* Main Frame */}
             <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-3xl p-3 bg-gradient-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
-              <div className="w-full h-full rounded-2xl overflow-hidden relative group">
+              <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                   alt="ZTA Lab Digital Agency Team"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
               </div>

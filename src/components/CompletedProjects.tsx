@@ -154,16 +154,16 @@ export default function CompletedProjects() {
               <CarouselItem key={project.id} className="pl-4 md:basis-1/2">
                 <div
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/60 transition-all duration-500 hover:-translate-y-1.5 shadow-xl flex flex-col h-full"
+                  className="group cursor-pointer rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/50 shadow-xl flex flex-col h-full transition-colors duration-300"
                 >
                   {/* Project Visual Image */}
                   <div className="relative h-64 sm:h-80 w-full overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80" />
                   </div>
 
                   {/* Bottom Card Overview */}
@@ -177,7 +177,7 @@ export default function CompletedProjects() {
                           {project.client}
                         </span>
                       </div>
-                      <h3 className="text-lg sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                      <h3 className="text-lg sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
                         {project.title}
                       </h3>
                       <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">
@@ -186,11 +186,11 @@ export default function CompletedProjects() {
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-border/30 flex items-center justify-between">
-                      <span className="text-xs font-medium text-muted-foreground flex items-center gap-1">
+                      <span className="text-xs font-medium text-muted-foreground flex items-center gap-1 group-hover:text-foreground transition-colors">
                         <ExternalLink className="w-3.5 h-3.5 text-primary" />
                         <span>View Project Details</span>
                       </span>
-                      <span className="w-10 h-10 rounded-full bg-secondary group-hover:bg-primary text-primary group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
+                      <span className="w-10 h-10 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors duration-300">
                         <ArrowUpRight className="w-5 h-5" />
                       </span>
                     </div>

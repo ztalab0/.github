@@ -54,7 +54,7 @@ export default function TeamSection() {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="group glass-panel bg-card rounded-3xl overflow-hidden border border-border hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 shadow-2xl flex flex-col justify-between"
+              className="group glass-panel bg-card rounded-3xl overflow-hidden border border-border hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-colors duration-300"
             >
               <div>
                 {/* Team Portrait Image Box with 3:4 Aspect Ratio */}
@@ -62,13 +62,13 @@ export default function TeamSection() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-90" />
                 </div>
 
                 <div className="p-6 text-center">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                     {member.name}
                   </h3>
                   <p className="text-xs text-primary font-bold uppercase tracking-wider mt-2">
@@ -85,7 +85,7 @@ export default function TeamSection() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${member.name} LinkedIn`}
-                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 border border-border"
+                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <LinkedinIcon className="w-4 h-4" />
                   </a>
@@ -96,7 +96,7 @@ export default function TeamSection() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${member.name} GitHub`}
-                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 border border-border"
+                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <GithubIcon className="w-4 h-4" />
                   </a>
@@ -105,7 +105,7 @@ export default function TeamSection() {
                   <a
                     href={member.email}
                     aria-label={`Email ${member.name}`}
-                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 border border-border"
+                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <Mail className="w-4 h-4" />
                   </a>

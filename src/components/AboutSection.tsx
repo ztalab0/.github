@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, CheckCircle2, ShieldCheck, Zap, Rocket, Target } from "lucide-react";
 
 export default function AboutSection() {
@@ -19,11 +17,11 @@ export default function AboutSection() {
           <div className="lg:col-span-6 relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-3xl overflow-hidden border border-border shadow-2xl group">
+                <div className="rounded-3xl overflow-hidden border border-border shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80"
                     alt="ZTA Lab Agile Engineering Workflow"
-                    className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-60 object-cover"
                   />
                 </div>
                 <div className="glass-panel p-6 rounded-3xl border border-border">
@@ -47,11 +45,11 @@ export default function AboutSection() {
                     Combining technology with data-driven marketing to maximize ROI.
                   </p>
                 </div>
-                <div className="rounded-3xl overflow-hidden border border-border shadow-2xl group">
+                <div className="rounded-3xl overflow-hidden border border-border shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80"
                     alt="Result-Oriented Digital Growth Strategy"
-                    className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-60 object-cover"
                   />
                 </div>
               </div>

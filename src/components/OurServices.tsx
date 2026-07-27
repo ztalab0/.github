@@ -79,8 +79,8 @@ export default function OurServices() {
 
             {/* Slider Arrow Controls */}
             <div className="flex items-center gap-3 relative">
-              <CarouselPrevious className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />
-              <CarouselNext className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />
+              <CarouselPrevious className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors" />
+              <CarouselNext className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors" />
             </div>
           </div>
 
@@ -90,14 +90,14 @@ export default function OurServices() {
               const IconComponent = service.icon;
               return (
                 <CarouselItem key={service.id} className="pl-4 md:basis-1/3">
-                  <div className="group glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 shadow-xl flex flex-col justify-between h-full">
+                  <div className="group glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border hover:border-primary/50 shadow-xl flex flex-col justify-between h-full transition-colors duration-300">
                     <div>
                       {/* Icon Badge */}
-                      <div className="w-14 h-14 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary mb-6 sm:mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <div className="w-14 h-14 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary mb-6 sm:mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                         <IconComponent className="w-7 h-7" />
                       </div>
 
-                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-colors duration-300">
                         {service.title}
                       </h3>
 
@@ -119,10 +119,10 @@ export default function OurServices() {
                     {/* Bottom Action Link */}
                     <a
                       href="#contact"
-                      className="pt-6 border-t border-border/40 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground group-hover:text-primary transition-colors"
+                      className="pt-6 border-t border-border/40 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground group-hover:text-primary transition-colors duration-300"
                     >
                       <span>Inquire Service</span>
-                      <span className="w-9 h-9 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
+                      <span className="w-9 h-9 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors duration-300">
                         <ArrowUpRight className="w-4 h-4" />
                       </span>
                     </a>
