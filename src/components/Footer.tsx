@@ -1,7 +1,13 @@
 "use client";
 
 import { Phone, ArrowUp, Mail, MapPin } from "lucide-react";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, DribbbleIcon, WhatsappIcon } from "./SocialIcons";
+import {
+  FacebookIcon,
+  UpworkIcon,
+  LinkedinIcon,
+  GithubIcon,
+  WhatsappIcon,
+} from "./SocialIcons";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -31,11 +37,17 @@ export default function Footer() {
                 Direct Contact
               </span>
               <div className="flex items-center gap-3 text-xs sm:text-sm font-extrabold text-foreground">
-                <a href="tel:+8801976540046" className="hover:text-primary transition-colors">
+                <a
+                  href="tel:+8801976540046"
+                  className="hover:text-primary transition-colors"
+                >
                   +8801976540046
                 </a>
                 <span className="text-muted-foreground">|</span>
-                <a href="tel:+8801712345678" className="hover:text-primary transition-colors">
+                <a
+                  href="tel:+8801712345678"
+                  className="hover:text-primary transition-colors"
+                >
                   +8801712345678
                 </a>
               </div>
@@ -48,7 +60,9 @@ export default function Footer() {
           {/* Column 1: Agency Tagline & Direct Info */}
           <div className="md:col-span-5 space-y-4">
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              ZTA Lab is a creative technology agency specializing in high-performance websites, powerful applications, and result-oriented digital marketing strategies.
+              ZTA Lab is a creative technology agency specializing in
+              high-performance websites, custom software engineering, AI
+              integrations, and digital marketing strategies.
             </p>
             <div className="space-y-2 pt-2 text-xs text-gray-300">
               <div className="flex items-center gap-2">
@@ -57,7 +71,10 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:info@ztalab.com" className="hover:text-primary transition-colors">
+                <a
+                  href="mailto:info@ztalab.com"
+                  className="hover:text-primary transition-colors"
+                >
                   info@ztalab.com
                 </a>
               </div>
@@ -71,19 +88,44 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
-                <a href="#services" className="hover:text-primary transition-colors">Services</a>
+                <a
+                  href="#services"
+                  className="hover:text-primary transition-colors"
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-primary transition-colors">Portfolio</a>
+                <a
+                  href="#portfolio"
+                  className="hover:text-primary transition-colors"
+                >
+                  Portfolio
+                </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-primary transition-colors">Who Are We</a>
+                <a
+                  href="#about"
+                  className="hover:text-primary transition-colors"
+                >
+                  Who Are We
+                </a>
               </li>
               <li>
-                <a href="#team" className="hover:text-primary transition-colors">Team</a>
+                <a
+                  href="#team"
+                  className="hover:text-primary transition-colors"
+                >
+                  Team
+                </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-primary transition-colors">Contact Us</a>
+                <a
+                  href="#contact"
+                  className="hover:text-primary transition-colors"
+                >
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
@@ -94,50 +136,56 @@ export default function Footer() {
               Follow ZTA Lab
             </h4>
             <p className="text-xs text-muted-foreground">
-              Stay connected with our latest projects, agency news, and design updates.
+              Stay connected with our latest software releases, AI solutions,
+              and project highlights.
             </p>
             <div className="flex items-center gap-3 text-gray-300">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61592197508930"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
+                title="ZTA Lab Facebook"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.upwork.com/freelancers/~01cee739c8fe979924"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram"
+                aria-label="Upwork"
+                title="ZTA Lab Upwork"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
-                <InstagramIcon className="w-4 h-4" />
+                <UpworkIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.linkedin.com/company/zta-lab"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
+                title="ZTA Lab LinkedIn"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://dribbble.com"
+                href="https://github.com/ztalab0"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Dribbble"
+                aria-label="GitHub"
+                title="ZTA Lab GitHub"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
-                <DribbbleIcon className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://wa.me/8801976540046"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
+                title="WhatsApp (+8801976540046)"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <WhatsappIcon className="w-4 h-4" />
@@ -151,9 +199,19 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} ZTA Lab. All Rights Reserved.</p>
 
           <div className="flex items-center gap-6">
-            <a href="#contact" className="hover:text-foreground transition-colors">Terms & Conditions</a>
-            <a href="#contact" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            
+            <a
+              href="#contact"
+              className="hover:text-foreground transition-colors"
+            >
+              Terms & Conditions
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </a>
+
             {/* Back To Top Button */}
             <button
               type="button"

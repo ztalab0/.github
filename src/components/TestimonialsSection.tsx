@@ -47,7 +47,10 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section id="feedbacks" className="py-20 sm:py-24 bg-card/30 border-t border-border/40 relative overflow-hidden">
+    <section
+      id="feedbacks"
+      className="py-20 sm:py-24 bg-card/30 border-t border-border/40 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12">
         <div className="text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-border w-fit mb-3">
@@ -60,7 +63,8 @@ export default function TestimonialsSection() {
             What Our Partners Say About Us
           </h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Real feedback from business owners and founders who scaled with ZTA Lab.
+            Real feedback from business owners and founders who scaled with ZTA
+            Lab.
           </p>
         </div>
       </div>
@@ -94,8 +98,12 @@ export default function TestimonialsSection() {
                   className="w-11 h-11 rounded-full border-2 border-primary object-cover"
                 />
                 <div>
-                  <h4 className="text-sm font-bold text-foreground">{item.name}</h4>
-                  <p className="text-[11px] text-muted-foreground">{item.role}</p>
+                  <h4 className="text-sm font-bold text-foreground">
+                    {item.name}
+                  </h4>
+                  <p className="text-[11px] text-muted-foreground">
+                    {item.role}
+                  </p>
                 </div>
               </div>
             </div>

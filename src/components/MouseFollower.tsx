@@ -50,7 +50,9 @@ export default function MouseFollower() {
       {/* Outer Circle */}
       <div
         className={`fixed top-0 left-0 pointer-events-none z-50 rounded-circle transition-transform duration-100 ease-out ${
-          isHovered ? "scale-150 border-[#26E09C] bg-[#26E09C]/10" : "border-[#8EB69B]/40 bg-transparent"
+          isHovered
+            ? "scale-150 border-[#26E09C] bg-[#26E09C]/10"
+            : "border-[#8EB69B]/40 bg-transparent"
         }`}
         style={{
           width: "36px",

@@ -15,17 +15,17 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "Website Design & Development",
+    service: "Web & Mobile Development + AI Integration",
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const services = [
-    "Website Design & Development",
-    "App Development",
-    "Digital Marketing",
-    "Custom Solution",
+    "Web & Mobile Development + AI Integration",
+    "Software Dev & In-House Products",
+    "Digital Marketing, SEO & Business Automation",
+    "Custom Enterprise Requirement",
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,7 +35,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 bg-background relative overflow-hidden border-t border-border/40">
+    <section
+      id="contact"
+      className="py-20 sm:py-24 bg-background relative overflow-hidden border-t border-border/40"
+    >
       {/* Background Accent Glows */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -51,7 +54,8 @@ export default function ContactSection() {
             Let’s Build Something Amazing Together.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-            Have a project in mind or need expert digital consultation? Send us a message and our team will connect with you shortly.
+            Have a project in mind or need expert digital consultation? Send us
+            a message and our team will connect with you shortly.
           </p>
         </div>
 
@@ -94,16 +98,24 @@ export default function ContactSection() {
                       href="tel:+8801976540046"
                       className="block text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors"
                     >
-                      +8801976540046 <span className="text-xs font-normal text-muted-foreground">(Primary / Zul)</span>
+                      +8801976540046{" "}
+                      <span className="text-xs font-normal text-muted-foreground">
+                        (Primary / Zul)
+                      </span>
                     </a>
                     <a
                       href="tel:+8801712345678"
                       className="block text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors"
                     >
-                      +8801712345678 <span className="text-xs font-normal text-muted-foreground">(Team Line)</span>
+                      +8801712345678{" "}
+                      <span className="text-xs font-normal text-muted-foreground">
+                        (Team Line)
+                      </span>
                     </a>
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">Direct Phone & Support Lines</p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Direct Phone & Support Lines
+                  </p>
                 </div>
               </div>
 
@@ -123,7 +135,9 @@ export default function ContactSection() {
                   >
                     +8801976540046
                   </a>
-                  <p className="text-xs text-gray-400">Instant Chat & Consultation</p>
+                  <p className="text-xs text-gray-400">
+                    Instant Chat & Consultation
+                  </p>
                 </div>
               </div>
 
@@ -151,9 +165,12 @@ export default function ContactSection() {
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto border-2 border-primary">
                     <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-foreground">Message Sent!</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-foreground">
+                    Message Sent!
+                  </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-                    Thank you for contacting ZTA Lab. A strategist will review your message and reply promptly.
+                    Thank you for contacting ZTA Lab. A strategist will review
+                    your message and reply promptly.
                   </p>
                   <button
                     type="button"
@@ -184,7 +201,9 @@ export default function ContactSection() {
                         required
                         placeholder="Your Name"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
                       />
                     </div>
@@ -197,7 +216,9 @@ export default function ContactSection() {
                         required
                         placeholder="your.email@company.com"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
                       />
                     </div>
@@ -213,7 +234,9 @@ export default function ContactSection() {
                         <button
                           key={item}
                           type="button"
-                          onClick={() => setFormData({ ...formData, service: item })}
+                          onClick={() =>
+                            setFormData({ ...formData, service: item })
+                          }
                           className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                             formData.service === item
                               ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
@@ -236,7 +259,9 @@ export default function ContactSection() {
                       required
                       placeholder="Tell us about your project, goals, or inquiry..."
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm resize-none"
                     />
                   </div>

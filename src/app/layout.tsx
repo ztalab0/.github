@@ -96,9 +96,10 @@ const jsonLd = {
     addressCountry: "Bangladesh",
   },
   sameAs: [
-    "https://facebook.com",
-    "https://instagram.com",
-    "https://linkedin.com",
+    "https://www.facebook.com/profile.php?id=61592197508930",
+    "https://www.upwork.com/freelancers/~01cee739c8fe979924",
+    "https://www.linkedin.com/company/zta-lab",
+    "https://github.com/ztalab0",
     "https://wa.me/8801976540046",
   ],
 };
@@ -109,17 +110,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-        "font-sans",
-      )}
-    >
+    <html lang="en" className={cn("h-full", "antialiased", "font-sans")}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Alatsi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"

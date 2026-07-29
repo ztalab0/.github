@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import {
   FacebookIcon,
-  InstagramIcon,
+  UpworkIcon,
   LinkedinIcon,
-  DribbbleIcon,
+  GithubIcon,
   WhatsappIcon,
 } from "./SocialIcons";
 
@@ -25,44 +25,44 @@ export default function Hero() {
         <div className="w-px h-12 bg-border" />
         <div className="flex flex-col gap-4 text-gray-400">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/profile.php?id=61592197508930"
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"
-            title="Facebook"
+            title="ZTA Lab Facebook"
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <FacebookIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.upwork.com/freelancers/~01cee739c8fe979924"
             target="_blank"
             rel="noreferrer"
-            aria-label="Instagram"
-            title="Instagram"
+            aria-label="Upwork"
+            title="ZTA Lab Upwork"
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
-            <InstagramIcon className="w-4 h-4" />
+            <UpworkIcon className="w-4 h-4" />
           </a>
           <a
             href="https://www.linkedin.com/company/zta-lab"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            title="LinkedIn"
+            title="ZTA Lab LinkedIn"
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <LinkedinIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://dribbble.com"
+            href="https://github.com/ztalab0"
             target="_blank"
             rel="noreferrer"
-            aria-label="Dribbble"
-            title="Dribbble"
+            aria-label="GitHub"
+            title="ZTA Lab GitHub"
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
-            <DribbbleIcon className="w-4 h-4" />
+            <GithubIcon className="w-4 h-4" />
           </a>
           <a
             href="https://wa.me/8801976540046"

@@ -31,7 +31,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <span className="text-xs font-bold text-primary uppercase tracking-wider">
               {project.category}
             </span>
-            <h3 className="text-2xl font-extrabold text-foreground mt-1">{project.title}</h3>
+            <h3 className="text-2xl font-extrabold text-foreground mt-1">
+              {project.title}
+            </h3>
           </div>
           <button
             type="button"
@@ -55,30 +57,44 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 rounded-xl bg-background/60 border border-border/40">
             <div>
               <span className="text-xs text-muted-foreground">Client</span>
-              <p className="text-sm font-bold text-foreground mt-0.5">{project.client}</p>
+              <p className="text-sm font-bold text-foreground mt-0.5">
+                {project.client}
+              </p>
             </div>
             <div>
               <span className="text-xs text-muted-foreground">Year</span>
-              <p className="text-sm font-bold text-foreground mt-0.5">{project.year}</p>
+              <p className="text-sm font-bold text-foreground mt-0.5">
+                {project.year}
+              </p>
             </div>
             <div>
               <span className="text-xs text-muted-foreground">Industry</span>
-              <p className="text-sm font-bold text-primary mt-0.5">{project.category}</p>
+              <p className="text-sm font-bold text-primary mt-0.5">
+                {project.category}
+              </p>
             </div>
           </div>
 
           <div>
-            <h4 className="text-base font-bold text-foreground mb-2">Project Overview</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+            <h4 className="text-base font-bold text-foreground mb-2">
+              Project Overview
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {project.description}
+            </p>
           </div>
 
           <div>
-            <h4 className="text-base font-bold text-foreground mb-3">Key Deliverables</h4>
+            <h4 className="text-base font-bold text-foreground mb-3">
+              Key Deliverables
+            </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {project.deliverables.map((item) => (
                 <div key={item} className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-xs font-medium text-gray-200">{item}</span>
+                  <span className="text-xs font-medium text-gray-200">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>

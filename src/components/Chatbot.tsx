@@ -65,7 +65,7 @@ export default function Chatbot() {
         botResponse = {
           id: (Date.now() + 1).toString(),
           sender: "bot",
-          text: "We specialize in 3 core domains:\n• Website Design & Development (E-commerce, Business Portals, Landing Pages)\n• Mobile & Web App Development (iOS, Android, Custom Web Apps)\n• Digital Marketing (SEO, Google/Meta Ads, Social Media Strategy)",
+          text: "We specialize in 3 core divisions:\n1. Web & Mobile Development + AI Integration (Frontend, Backend, iOS, Android, AI Sales Man & Chatbots)\n2. Custom Software Dev & In-House Products (Client-based custom software, in-house software download hub & subscription licensing)\n3. Digital Marketing, SEO & Business Automation (Technical SEO audits, Meta/Google ads, custom workflow & process automation)",
           options: [
             { label: "💼 View Portfolio", action: "portfolio" },
             { label: "🚀 Start a Project", action: "contact" },
