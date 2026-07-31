@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Left Vertical Social Sidebar with Official Links */}
-      <div className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-5">
+      <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-5">
         <span className="text-[11px] font-bold tracking-[0.25em] text-muted-foreground uppercase [writing-mode:vertical-lr] rotate-180">
           CONNECT WITH US
         </span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "../lib/utils";
 import {
   ArrowUpRight,
   Sparkles,
@@ -233,12 +234,10 @@ const processSteps = [
 
 export default function OurServices() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
-  const [expandedServices, setExpandedServices] = useState<string[]>([]);
+  const [isAllExpanded, setIsAllExpanded] = useState<boolean>(false);
 
-  const toggleServiceExpand = (id: string) => {
-    setExpandedServices((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
-    );
+  const toggleServiceExpand = () => {
+    setIsAllExpanded((prev) => !prev);
   };
 
   const selectedServiceModal = groupedServices.find(
@@ -252,7 +251,7 @@ export default function OurServices() {
     >
       {/* Background Subtle Gradient Glows */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-secondary/50 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-125 h-125 bg-secondary/50 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -278,19 +277,25 @@ export default function OurServices() {
         </div>
 
         {/* 3 Main Grouped Service Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
           {groupedServices.map((service) => {
             const IconComp = service.icon;
-            const isExpanded = expandedServices.includes(service.id);
+            const isExpanded = isAllExpanded;
 
             return (
               <div
                 key={service.id}
-                className="group glass-panel bg-card/90 p-6 sm:p-7 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden"
+                className={cn(
+                  "group glass-panel bg-card/90 p-6 sm:p-7 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden h-full",
+                  isExpanded && "ring-2 ring-primary/20 bg-card",
+                )}
               >
                 {/* Subtle Card Accent Gradient */}
                 <div
-                  className={`absolute top-0 right-0 w-40 h-40 bg-linear-to-bl ${service.accentColor} rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={cn(
+                    "absolute top-0 right-0 w-40 h-40 bg-linear-to-bl rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300",
+                    service.accentColor,
+                  )}
                 />
 
                 <div>
@@ -300,7 +305,10 @@ export default function OurServices() {
                       <IconComp className="w-6 h-6" />
                     </div>
                     <span
-                      className={`text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border ${service.pillBadgeColor}`}
+                      className={cn(
+                        "text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border",
+                        service.pillBadgeColor,
+                      )}
                     >
                       {service.badge}
                     </span>
@@ -328,7 +336,7 @@ export default function OurServices() {
                       </span>
                     ))}
                     {!isExpanded && service.techStack.length > 4 && (
-                      <span className="text-[10px] font-medium bg-secondary/40 text-muted-foreground px-2 py-0.5 rounded-md">
+                      <span className="text-xs font-medium bg-secondary/40 text-muted-foreground px-2 py-0.5 rounded-md">
                         +{service.techStack.length - 4} more
                       </span>
                     )}
@@ -365,7 +373,7 @@ export default function OurServices() {
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      onClick={() => toggleServiceExpand(service.id)}
+                      onClick={toggleServiceExpand}
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 text-xs font-bold transition-all cursor-pointer"
                     >
                       <span>{isExpanded ? "Show Less" : "See More"}</span>
@@ -401,7 +409,7 @@ export default function OurServices() {
         </div>
 
         {/* Feature-Rich In-House Software Download & Subscription Showcase (Group 2 Special Feature) */}
-        <div className="glass-panel bg-card p-8 sm:p-12 rounded-3xl border border-border/80 shadow-2xl relative mb-20">
+        {/* <div className="glass-panel bg-card p-8 sm:p-12 rounded-3xl border border-border/80 shadow-2xl relative mb-20">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8 border-b border-border/60">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-extrabold uppercase tracking-wider mb-3">
@@ -427,7 +435,6 @@ export default function OurServices() {
             </a>
           </div>
 
-          {/* Software Showcase Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
             {sampleSoftware.map((soft) => (
               <div
@@ -485,7 +492,7 @@ export default function OurServices() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Our Process Section */}
         <div className="pt-12 border-t border-border/50">
