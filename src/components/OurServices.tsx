@@ -5,22 +5,11 @@ import {
   ArrowUpRight,
   Sparkles,
   Globe,
-  Smartphone,
   TrendingUp,
   CheckCircle,
   Code2,
   Download,
-  Bot,
-  Zap,
-  Cpu,
-  Layers,
-  ShieldCheck,
-  Key,
-  RefreshCw,
-  BarChart3,
-  ExternalLink,
   X,
-  ChevronRight,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -36,6 +25,212 @@ interface InHouseSoftware {
   features: string[];
 }
 
+const sampleSoftware: InHouseSoftware[] = [
+  {
+    name: "ZTA Sales Bot Agent",
+    category: "AI & Sales Automation",
+    version: "v2.1.0 Stable",
+    size: "45 MB",
+    description:
+      "Autonomous AI Sales Assistant for desktop & web that nurtures leads, answers customer queries, and closes sales 24/7.",
+    downloadUrl: "#contact",
+    model: "Subscription / License Key",
+    features: [
+      "OpenAI & Gemini API Integration",
+      "Custom Knowledge Base Training",
+      "CRM Auto-Sync",
+    ],
+  },
+  {
+    name: "ZTA Workflow Automator",
+    category: "Business Process Automation",
+    version: "v1.8.4",
+    size: "62 MB",
+    description:
+      "Lightweight desktop middleware connecting webhooks, databases, and custom API pipelines with zero-code rules.",
+    downloadUrl: "#contact",
+    model: "Monthly / Lifetime Plan",
+    features: [
+      "Multi-App Webhook Dispatcher",
+      "Encrypted Local Storage",
+      "Scheduled Cron Tasks",
+    ],
+  },
+  {
+    name: "ZTA SEO & Growth Suite",
+    category: "Digital Marketing & SEO",
+    version: "v3.0.2",
+    size: "28 MB",
+    description:
+      "Real-time technical SEO auditor, keyword tracker, and ad campaign performance dashboard.",
+    downloadUrl: "#contact",
+    model: "Subscription Model",
+    features: [
+      "Sitemap & Schema Inspector",
+      "PageSpeed Score Analytics",
+      "Automated Ranking Reports",
+    ],
+  },
+];
+
+const groupedServices = [
+  {
+    id: "web-mobile-ai",
+    groupTag: "Group 01",
+    badge: "Web, Mobile & AI Solutions",
+    title: "Web & Mobile Development + AI Integration",
+    shortDesc:
+      "High-performance website engineering (Frontend & Backend), native/cross-platform mobile apps for Android & iOS, alongside client-tailored AI Agents and 24/7 AI Sales Reps.",
+    icon: Globe,
+    accentColor: "from-emerald-500/20 to-primary/10",
+    pillBadgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+    pillars: [
+      {
+        name: "Full-Stack Web Engineering",
+        desc: "Responsive React/Next.js frontends, scalable Node/Python backends, REST/GraphQL APIs, and cloud database architecture.",
+      },
+      {
+        name: "Android & iOS App Development",
+        desc: "Seamless cross-platform mobile apps, native device integration, offline sync, push notifications, and App Store / Play Store deployment.",
+      },
+      {
+        name: "Client-Tailored AI & AI Sales Man",
+        desc: "Autonomous 24/7 AI Sales Agent designed to engage website visitors, qualify leads, answer product queries, and automate sales pipelines.",
+      },
+    ],
+    subFeatures: [
+      "Frontend & Backend Custom Web Systems",
+      "iOS & Android Native / Cross-Platform Apps",
+      "AI Sales Man Chatbot (Custom Client Rules)",
+      "Fine-Tuned LLMs & Vector Database RAG",
+      "Lead Capture & Sales Funnel Integration",
+      "High-Security Cloud & API Architecture",
+    ],
+    techStack: [
+      "Next.js",
+      "React Native",
+      "Node.js",
+      "Python",
+      "OpenAI API",
+      "Gemini AI",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    id: "software-dev-products",
+    groupTag: "Group 02",
+    badge: "Custom Dev & In-House Products",
+    title: "Software Development & In-House Products",
+    shortDesc:
+      "Bespoke software solutions built precisely to client specifications, plus ZTA Lab's proprietary suite of in-house software tools with direct download options and flexible subscription licensing.",
+    icon: Code2,
+    accentColor: "from-blue-500/20 to-primary/10",
+    pillBadgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+    pillars: [
+      {
+        name: "Customised Client Software",
+        desc: "Tailor-made desktop, web, and enterprise applications engineered around your company's specific business logic and operating needs.",
+      },
+      {
+        name: "In-House Made Software Showcase",
+        desc: "Explore ready-to-use software built by ZTA Lab. Featured with direct links on our site, version logs, and product showcases.",
+      },
+      {
+        name: "Direct Download Hub & Subscriptions",
+        desc: "One-click GetIntoPC-style fast installer downloads (Setup / Portable / Standalone) with flexible monthly, annual, or license-key subscription models.",
+      },
+    ],
+    subFeatures: [
+      "Client Requirement-Based Custom Engineering",
+      "ZTA Lab In-House Software Showcase Portal",
+      "Direct Setup & Installer Download Options",
+      "Flexible Subscription & License Key System",
+      "Background Auto-Updates & Cloud Sync",
+      "Cross-Platform Windows / Mac / Linux Builds",
+    ],
+    techStack: [
+      "Electron",
+      "C# / .NET",
+      "Go",
+      "Python",
+      "TypeScript",
+      "Docker",
+      "Stripe Subscription API",
+      "SQLite / Cloud DB",
+    ],
+  },
+  {
+    id: "marketing-seo-automation",
+    groupTag: "Group 03",
+    badge: "Growth & Automation",
+    title: "Digital Marketing, SEO & Business Automation",
+    shortDesc:
+      "Data-driven marketing campaigns, technical & content SEO optimization, and intelligent business process automation tailored to streamline operations and scale your revenue.",
+    icon: TrendingUp,
+    accentColor: "from-purple-500/20 to-primary/10",
+    pillBadgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
+    pillars: [
+      {
+        name: "Search Engine Optimization (SEO)",
+        desc: "On-page, technical & off-page SEO audits, schema markup, site speed optimization, and high-converting search rank strategy.",
+      },
+      {
+        name: "Performance Digital Marketing",
+        desc: "Targeted Meta & Google Ad campaigns, conversion rate optimization (CRO), brand positioning, and social media growth funnels.",
+      },
+      {
+        name: "Client-Specific Business Automation",
+        desc: "Custom automated workflows connecting CRMs, ERPs, payment channels, automated email sequences, and webhook integrations.",
+      },
+    ],
+    subFeatures: [
+      "Comprehensive Technical & Content SEO Audits",
+      "Meta Ads & Google PPC Performance Campaigns",
+      "Custom Business Process Automation Pipelines",
+      "CRM, ERP & Payment Gateway API Sync",
+      "Automated Lead Capture & Email Nurturing",
+      "Real-Time ROI & Conversion Analytics",
+    ],
+    techStack: [
+      "Google Analytics 4",
+      "Meta Business Suite",
+      "Zapier / Make",
+      "Custom Webhooks",
+      "SEO Schema",
+      "Ahrefs / SEMrush",
+    ],
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Discovery",
+    desc: "Understanding client requirements & architecture",
+  },
+  {
+    step: "02",
+    title: "Strategy & UX",
+    desc: "Designing system flow, UI/UX, & tech stack",
+  },
+  {
+    step: "03",
+    title: "Engineering",
+    desc: "Building frontends, backends, apps & AI models",
+  },
+  {
+    step: "04",
+    title: "Testing & Launch",
+    desc: "Quality assurance, deployment & release",
+  },
+  {
+    step: "05",
+    title: "Automation & Growth",
+    desc: "SEO, marketing funnels & continuous support",
+  },
+];
+
 export default function OurServices() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [expandedServices, setExpandedServices] = useState<string[]>([]);
@@ -45,213 +240,6 @@ export default function OurServices() {
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
-
-  const sampleSoftware: InHouseSoftware[] = [
-    {
-      name: "ZTA Sales Bot Agent",
-      category: "AI & Sales Automation",
-      version: "v2.1.0 Stable",
-      size: "45 MB",
-      description:
-        "Autonomous AI Sales Assistant for desktop & web that nurtures leads, answers customer queries, and closes sales 24/7.",
-      downloadUrl: "#contact",
-      model: "Subscription / License Key",
-      features: [
-        "OpenAI & Gemini API Integration",
-        "Custom Knowledge Base Training",
-        "CRM Auto-Sync",
-      ],
-    },
-    {
-      name: "ZTA Workflow Automator",
-      category: "Business Process Automation",
-      version: "v1.8.4",
-      size: "62 MB",
-      description:
-        "Lightweight desktop middleware connecting webhooks, databases, and custom API pipelines with zero-code rules.",
-      downloadUrl: "#contact",
-      model: "Monthly / Lifetime Plan",
-      features: [
-        "Multi-App Webhook Dispatcher",
-        "Encrypted Local Storage",
-        "Scheduled Cron Tasks",
-      ],
-    },
-    {
-      name: "ZTA SEO & Growth Suite",
-      category: "Digital Marketing & SEO",
-      version: "v3.0.2",
-      size: "28 MB",
-      description:
-        "Real-time technical SEO auditor, keyword tracker, and ad campaign performance dashboard.",
-      downloadUrl: "#contact",
-      model: "Subscription Model",
-      features: [
-        "Sitemap & Schema Inspector",
-        "PageSpeed Score Analytics",
-        "Automated Ranking Reports",
-      ],
-    },
-  ];
-
-  const groupedServices = [
-    {
-      id: "web-mobile-ai",
-      groupTag: "Group 01",
-      badge: "Web, Mobile & AI Solutions",
-      title: "Web & Mobile Development + AI Integration",
-      shortDesc:
-        "High-performance website engineering (Frontend & Backend), native/cross-platform mobile apps for Android & iOS, alongside client-tailored AI Agents and 24/7 AI Sales Reps.",
-      icon: Globe,
-      accentColor: "from-emerald-500/20 to-primary/10",
-      pillBadgeColor:
-        "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
-      pillars: [
-        {
-          name: "Full-Stack Web Engineering",
-          desc: "Responsive React/Next.js frontends, scalable Node/Python backends, REST/GraphQL APIs, and cloud database architecture.",
-        },
-        {
-          name: "Android & iOS App Development",
-          desc: "Seamless cross-platform mobile apps, native device integration, offline sync, push notifications, and App Store / Play Store deployment.",
-        },
-        {
-          name: "Client-Tailored AI & AI Sales Man",
-          desc: "Autonomous 24/7 AI Sales Agent designed to engage website visitors, qualify leads, answer product queries, and automate sales pipelines.",
-        },
-      ],
-      subFeatures: [
-        "Frontend & Backend Custom Web Systems",
-        "iOS & Android Native / Cross-Platform Apps",
-        "AI Sales Man Chatbot (Custom Client Rules)",
-        "Fine-Tuned LLMs & Vector Database RAG",
-        "Lead Capture & Sales Funnel Integration",
-        "High-Security Cloud & API Architecture",
-      ],
-      techStack: [
-        "Next.js",
-        "React Native",
-        "Node.js",
-        "Python",
-        "OpenAI API",
-        "Gemini AI",
-        "PostgreSQL",
-        "Tailwind CSS",
-      ],
-    },
-    {
-      id: "software-dev-products",
-      groupTag: "Group 02",
-      badge: "Custom Dev & In-House Products",
-      title: "Software Development & In-House Products",
-      shortDesc:
-        "Bespoke software solutions built precisely to client specifications, plus ZTA Lab's proprietary suite of in-house software tools with direct download options and flexible subscription licensing.",
-      icon: Code2,
-      accentColor: "from-blue-500/20 to-primary/10",
-      pillBadgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
-      pillars: [
-        {
-          name: "Customised Client Software",
-          desc: "Tailor-made desktop, web, and enterprise applications engineered around your company's specific business logic and operating needs.",
-        },
-        {
-          name: "In-House Made Software Showcase",
-          desc: "Explore ready-to-use software built by ZTA Lab. Featured with direct links on our site, version logs, and product showcases.",
-        },
-        {
-          name: "Direct Download Hub & Subscriptions",
-          desc: "One-click GetIntoPC-style fast installer downloads (Setup / Portable / Standalone) with flexible monthly, annual, or license-key subscription models.",
-        },
-      ],
-      subFeatures: [
-        "Client Requirement-Based Custom Engineering",
-        "ZTA Lab In-House Software Showcase Portal",
-        "Direct Setup & Installer Download Options",
-        "Flexible Subscription & License Key System",
-        "Background Auto-Updates & Cloud Sync",
-        "Cross-Platform Windows / Mac / Linux Builds",
-      ],
-      techStack: [
-        "Electron",
-        "C# / .NET",
-        "Go",
-        "Python",
-        "TypeScript",
-        "Docker",
-        "Stripe Subscription API",
-        "SQLite / Cloud DB",
-      ],
-    },
-    {
-      id: "marketing-seo-automation",
-      groupTag: "Group 03",
-      badge: "Growth & Automation",
-      title: "Digital Marketing, SEO & Business Automation",
-      shortDesc:
-        "Data-driven marketing campaigns, technical & content SEO optimization, and intelligent business process automation tailored to streamline operations and scale your revenue.",
-      icon: TrendingUp,
-      accentColor: "from-purple-500/20 to-primary/10",
-      pillBadgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
-      pillars: [
-        {
-          name: "Search Engine Optimization (SEO)",
-          desc: "On-page, technical & off-page SEO audits, schema markup, site speed optimization, and high-converting search rank strategy.",
-        },
-        {
-          name: "Performance Digital Marketing",
-          desc: "Targeted Meta & Google Ad campaigns, conversion rate optimization (CRO), brand positioning, and social media growth funnels.",
-        },
-        {
-          name: "Client-Specific Business Automation",
-          desc: "Custom automated workflows connecting CRMs, ERPs, payment channels, automated email sequences, and webhook integrations.",
-        },
-      ],
-      subFeatures: [
-        "Comprehensive Technical & Content SEO Audits",
-        "Meta Ads & Google PPC Performance Campaigns",
-        "Custom Business Process Automation Pipelines",
-        "CRM, ERP & Payment Gateway API Sync",
-        "Automated Lead Capture & Email Nurturing",
-        "Real-Time ROI & Conversion Analytics",
-      ],
-      techStack: [
-        "Google Analytics 4",
-        "Meta Business Suite",
-        "Zapier / Make",
-        "Custom Webhooks",
-        "SEO Schema",
-        "Ahrefs / SEMrush",
-      ],
-    },
-  ];
-
-  const processSteps = [
-    {
-      step: "01",
-      title: "Discovery",
-      desc: "Understanding client requirements & architecture",
-    },
-    {
-      step: "02",
-      title: "Strategy & UX",
-      desc: "Designing system flow, UI/UX, & tech stack",
-    },
-    {
-      step: "03",
-      title: "Engineering",
-      desc: "Building frontends, backends, apps & AI models",
-    },
-    {
-      step: "04",
-      title: "Testing & Launch",
-      desc: "Quality assurance, deployment & release",
-    },
-    {
-      step: "05",
-      title: "Automation & Growth",
-      desc: "SEO, marketing funnels & continuous support",
-    },
-  ];
 
   const selectedServiceModal = groupedServices.find(
     (s) => s.id === activeModal,

@@ -1,37 +1,35 @@
-"use client";
-
 import { Sparkles, Mail } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./SocialIcons";
 
-export default function TeamSection() {
-  const teamMembers = [
-    {
-      name: "Zul Ikram Musaddik Rayat",
-      shortName: "Zul",
-      role: "Founder, Lead Backend & Cloud",
-      image: "/assets/people/zul.png",
-      linkedin: "https://www.linkedin.com/in/zim-rayat/",
-      github: "https://github.com/devrayat000",
-      email: "mailto:rayat@ztalab.com",
-    },
-    {
-      name: "Tamim Ahmed",
-      shortName: "Tamim",
-      role: "Founder, Business & Operations",
-      image: "/assets/people/tamim.jpeg",
-      linkedin: "https://www.linkedin.com/in/tamim-ahmed19/",
-      email: "mailto:tamim@ztalab.com",
-    },
-    {
-      name: "Abir Hossen",
-      shortName: "Abir",
-      role: "Founder, Lead Frontend",
-      image: "/assets/people/abir.jpeg",
-      linkedin: "https://www.linkedin.com/in/abirhossen54321/",
-      email: "mailto:abir@ztalab.com",
-    },
-  ];
+const teamMembers = [
+  {
+    name: "Zul Ikram Musaddik Rayat",
+    shortName: "Zul",
+    role: "Founder, Lead Backend & Cloud",
+    image: "/assets/people/zul.png",
+    linkedin: "https://www.linkedin.com/in/zim-rayat/",
+    github: "https://github.com/devrayat000",
+    email: "mailto:rayat@ztalab.com",
+  },
+  {
+    name: "Tamim Ahmed",
+    shortName: "Tamim",
+    role: "Founder, Business & Operations",
+    image: "/assets/people/tamim.jpeg",
+    linkedin: "https://www.linkedin.com/in/tamim-ahmed19/",
+    email: "mailto:tamim@ztalab.com",
+  },
+  {
+    name: "Abir Hossen",
+    shortName: "Abir",
+    role: "Founder, Lead Frontend",
+    image: "/assets/people/abir.jpeg",
+    linkedin: "https://www.linkedin.com/in/abirhossen54321/",
+    email: "mailto:abir@ztalab.com",
+  },
+];
 
+export default function TeamSection() {
   return (
     <section
       id="team"

@@ -1,13 +1,11 @@
-"use client";
+const stats = [
+  { value: "10+", label: "Projects Delivered" },
+  { value: "100%", label: "Client Satisfaction" },
+  { value: "24/7", label: "Dedicated Support" },
+  { value: "100%", label: "On-Time Delivery" },
+];
 
 export default function ImpactStats() {
-  const stats = [
-    { value: "10+", label: "Projects Delivered" },
-    { value: "100%", label: "Client Satisfaction" },
-    { value: "24/7", label: "Dedicated Support" },
-    { value: "100%", label: "On-Time Delivery" },
-  ];
-
   return (
     <section className="py-16 sm:py-20 bg-background border-y border-border/50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

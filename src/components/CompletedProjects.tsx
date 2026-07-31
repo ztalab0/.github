@@ -11,86 +11,86 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const projects: ProjectData[] = [
+  {
+    id: "1",
+    title: "High-Performance E-Commerce & Web Platform",
+    category: "Website Design & Development",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A fast, responsive e-commerce web platform engineered for maximum conversion, smooth checkout flow, and custom product catalog management.",
+    client: "Aura Commerce",
+    year: "2026",
+    tags: ["Next.js", "TypeScript", "TailwindCSS", "Stripe"],
+    deliverables: [
+      "E-Commerce Platform",
+      "Responsive Mobile UI",
+      "SEO Optimization",
+      "Payment Gateway Integration",
+    ],
+  },
+  {
+    id: "2",
+    title: "Cross-Platform Mobile Application Suite",
+    category: "App Development",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Scalable Android & iOS mobile application featuring real-time data sync, user authentication, intuitive UI/UX design, and push notifications.",
+    client: "Nexus App Ecosystem",
+    year: "2026",
+    tags: ["React Native", "Node.js", "UI/UX Design", "GraphQL"],
+    deliverables: [
+      "iOS & Android Mobile App",
+      "User Experience Design",
+      "Backend API Architecture",
+      "Cloud Deployment",
+    ],
+  },
+  {
+    id: "3",
+    title: "Data-Driven Digital Marketing Campaign",
+    category: "Digital Marketing",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Strategic SEO optimization, targeted Meta & Google Ads campaigns, and social media branding that increased client leads by 185%.",
+    client: "Cipher Growth",
+    year: "2025",
+    tags: ["SEO Optimization", "Google Ads", "Meta Ads", "Analytics"],
+    deliverables: [
+      "Search Engine Optimization",
+      "Paid Ad Campaigns",
+      "Social Media Branding",
+      "Conversion Analytics",
+    ],
+  },
+  {
+    id: "4",
+    title: "Custom Enterprise Web Portal & Brand Identity",
+    category: "Website Design & Development",
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Bespoke business portal with interactive user dashboard, custom web workflows, and modern brand design system.",
+    client: "Verde Living Group",
+    year: "2025",
+    tags: ["Website Design", "Web App", "Branding", "UI/UX"],
+    deliverables: [
+      "Business Website",
+      "Custom UI Component Library",
+      "Brand Identity Assets",
+      "Speed & Performance Tuning",
+    ],
+  },
+];
+
 export default function CompletedProjects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
     null,
   );
-
-  const projects: ProjectData[] = [
-    {
-      id: "1",
-      title: "High-Performance E-Commerce & Web Platform",
-      category: "Website Design & Development",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      description:
-        "A fast, responsive e-commerce web platform engineered for maximum conversion, smooth checkout flow, and custom product catalog management.",
-      client: "Aura Commerce",
-      year: "2026",
-      tags: ["Next.js", "TypeScript", "TailwindCSS", "Stripe"],
-      deliverables: [
-        "E-Commerce Platform",
-        "Responsive Mobile UI",
-        "SEO Optimization",
-        "Payment Gateway Integration",
-      ],
-    },
-    {
-      id: "2",
-      title: "Cross-Platform Mobile Application Suite",
-      category: "App Development",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Scalable Android & iOS mobile application featuring real-time data sync, user authentication, intuitive UI/UX design, and push notifications.",
-      client: "Nexus App Ecosystem",
-      year: "2026",
-      tags: ["React Native", "Node.js", "UI/UX Design", "GraphQL"],
-      deliverables: [
-        "iOS & Android Mobile App",
-        "User Experience Design",
-        "Backend API Architecture",
-        "Cloud Deployment",
-      ],
-    },
-    {
-      id: "3",
-      title: "Data-Driven Digital Marketing Campaign",
-      category: "Digital Marketing",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Strategic SEO optimization, targeted Meta & Google Ads campaigns, and social media branding that increased client leads by 185%.",
-      client: "Cipher Growth",
-      year: "2025",
-      tags: ["SEO Optimization", "Google Ads", "Meta Ads", "Analytics"],
-      deliverables: [
-        "Search Engine Optimization",
-        "Paid Ad Campaigns",
-        "Social Media Branding",
-        "Conversion Analytics",
-      ],
-    },
-    {
-      id: "4",
-      title: "Custom Enterprise Web Portal & Brand Identity",
-      category: "Website Design & Development",
-      image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Bespoke business portal with interactive user dashboard, custom web workflows, and modern brand design system.",
-      client: "Verde Living Group",
-      year: "2025",
-      tags: ["Website Design", "Web App", "Branding", "UI/UX"],
-      deliverables: [
-        "Business Website",
-        "Custom UI Component Library",
-        "Brand Identity Assets",
-        "Speed & Performance Tuning",
-      ],
-    },
-  ];
 
   const filteredProjects =
     activeCategory === "All"
