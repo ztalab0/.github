@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import {
   Sparkles,
   Send,
@@ -8,31 +5,16 @@ import {
   Phone,
   MapPin,
   MessageSquare,
-  CheckCircle2,
 } from "lucide-react";
 
+const services = [
+  "Web & Mobile Development + AI Integration",
+  "Software Dev & In-House Products",
+  "Digital Marketing, SEO & Business Automation",
+  "Custom Enterprise Requirement",
+];
+
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    service: "Web & Mobile Development + AI Integration",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const services = [
-    "Web & Mobile Development + AI Integration",
-    "Software Dev & In-House Products",
-    "Digital Marketing, SEO & Business Automation",
-    "Custom Enterprise Requirement",
-  ];
-
-  const handleSubmit = () => {
-    if (!formData.name || !formData.email) return;
-    setSubmitted(true);
-  };
-
   return (
     <section
       id="contact"
@@ -159,159 +141,103 @@ export default function ContactSection() {
           {/* Interactive Contact Form Container */}
           <div className="lg:col-span-7">
             <div className="glass-panel bg-card p-6 sm:p-10 rounded-3xl border border-border shadow-2xl relative">
-              {submitted ? (
-                <div className="py-12 sm:py-16 text-center space-y-4 animate-fadeIn">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto border-2 border-primary">
-                    <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-foreground">
-                    Message Sent!
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-                    Thank you for contacting ZTA Lab. A strategist will review
-                    your message and reply promptly.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        service: services[0],
-                        message: "",
-                      });
-                    }}
-                    className="mt-6 px-6 py-2.5 rounded-full bg-secondary text-foreground text-xs font-bold hover:bg-border transition-colors border border-border"
-                  >
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form
-                  action="https://formsubmit.co/ztalab.2026@email.com"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="New submission!"
-                  />
-                  <input
-                    type="hidden"
-                    name="_cc"
-                    value="rayathossain49@email.com,founders@ztalab.com,rayat@ztalab.com"
-                  />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input
-                    type="text"
-                    name="_honey"
-                    style={{ display: "none" }}
-                  />
-                  {/* Name & Email Fields */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData({ ...formData, name: e.target.value })
-                        }
-                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="your.email@company.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
-                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Service Required Selection */}
+              <form
+                action="https://formsubmit.co/ztalab.2026@gmail.com"
+                method="POST"
+                // onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                <input type="hidden" name="_subject" value="New submission!" />
+                <input
+                  type="hidden"
+                  name="_cc"
+                  value="rayathossain49@email.com,founders@ztalab.com,rayat@ztalab.com"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" style={{ display: "none" }} />
+                <input type="hidden" name="_next" value="https://ztalab.com" />
+                {/* Name & Email Fields */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2.5">
-                      Service Required
+                    <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
+                      Name *
                     </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {services.map((item) => {
-                        const isSelected = formData.service === item;
-                        return (
-                          <label
-                            key={item}
-                            className={`flex items-center gap-3 p-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                              isSelected
-                                ? "bg-primary/10 border-primary text-foreground shadow-sm shadow-primary/10"
-                                : "bg-background text-muted-foreground border-border hover:border-muted-foreground/50 hover:text-foreground"
-                            }`}
-                          >
-                            <input
-                              type="radio"
-                              name="service"
-                              value={item}
-                              checked={isSelected}
-                              onChange={() =>
-                                setFormData({ ...formData, service: item })
-                              }
-                              className="w-4 h-4 text-primary bg-background border-border focus:ring-primary focus:ring-offset-0 shrink-0 accent-primary cursor-pointer"
-                            />
-                            <span>{item}</span>
-                          </label>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Project Message Textarea */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
+                    <input
+                      type="text"
+                      name="name"
                       required
-                      placeholder="Tell us about your project, goals, or inquiry..."
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm resize-none"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
                     />
                   </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="your.email@company.com"
+                      className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
+                    />
+                  </div>
+                </div>
 
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
+                {/* Service Required Selection */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2.5">
+                    Service Required
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {services.map((item) => {
+                      return (
+                        <label
+                          key={item}
+                          className="flex items-center gap-3 p-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer border
+                            bg-background text-muted-foreground border-border hover:border-muted-foreground/50 hover:text-foreground
+                            has-checked:bg-primary/10 has-checked:border-primary has-checked:text-foreground has-checked:shadow-sm has-checked:shadow-primary/10"
+                        >
+                          <input
+                            type="radio"
+                            name="service"
+                            value={item}
+                            className="w-4 h-4 text-primary bg-background border-border focus:ring-primary focus:ring-offset-0 shrink-0 accent-primary cursor-pointer"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Project Message Textarea */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2"
                   >
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    placeholder="Tell us about your project, goals, or inquiry..."
+                    className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm resize-none"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
+                >
+                  <span>Send Message</span>
+                  <Send className="w-4 h-4" />
+                </button>
+              </form>
             </div>
           </div>
         </div>
