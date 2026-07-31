@@ -230,7 +230,7 @@ export default function Chatbot() {
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="w-[90vw] max-w-[380px] sm:w-[400px] h-[520px] bg-card border border-border/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fadeIn backdrop-blur-xl">
+        <div className="w-[90vw] max-w-95 sm:w-100 h-130 bg-card border border-border/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fadeIn backdrop-blur-xl">
           {/* Top Chat Header */}
           <div className="bg-linear-to-r from-secondary via-card to-secondary p-4 border-b border-border/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -329,7 +329,7 @@ export default function Chatbot() {
               placeholder="Ask ZTA Lab a question..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-1 px-4 py-2.5 rounded-full bg-background border border-border text-foreground text-xs placeholder-gray-500 focus:outline-none focus:border-primary"
+              className="flex-1 px-4 py-2.5 rounded-full bg-background border border-border text-foreground text-xs focus:outline-none"
             />
             <button
               type="submit"

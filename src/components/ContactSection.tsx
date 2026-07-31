@@ -204,7 +204,7 @@ export default function ContactSection() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
+                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
                       />
                     </div>
                     <div>
@@ -219,7 +219,7 @@ export default function ContactSection() {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
+                        className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
                       />
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export default function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm resize-none"
+                      className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm resize-none"
                     />
                   </div>
 

@@ -14,8 +14,8 @@ export default function Hero() {
       className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-background"
     >
       {/* Background Decorative Subtle Radial Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-112.5 h-112.5 bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Left Vertical Social Sidebar with Official Links */}
       <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-5">
@@ -151,7 +151,7 @@ export default function Hero() {
           {/* Hero Right Graphic Composition */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
             {/* Main Frame */}
-            <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-3xl p-3 bg-linear-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
+            <div className="relative w-75 h-75 sm:w-95 sm:h-95 rounded-3xl p-3 bg-linear-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"

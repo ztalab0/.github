@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
           {[...testimonials, ...testimonials].map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="w-[320px] sm:w-[420px] shrink-0 glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border relative flex flex-col justify-between shadow-xl hover:border-primary/50 transition-all duration-300"
+              className="w-[320px] sm:w-105 shrink-0 glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border relative flex flex-col justify-between shadow-xl hover:border-primary/50 transition-all duration-300"
             >
               <Quote className="absolute top-6 right-6 w-8 h-8 text-border/60" />
 
