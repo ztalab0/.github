@@ -28,8 +28,7 @@ export default function ContactSection() {
     "Custom Enterprise Requirement",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (!formData.name || !formData.email) return;
     setSubmitted(true);
   };
@@ -179,7 +178,7 @@ export default function ContactSection() {
                       setFormData({
                         name: "",
                         email: "",
-                        service: "Website Design & Development",
+                        service: services[0],
                         message: "",
                       });
                     }}
@@ -189,7 +188,28 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action="https://formsubmit.co/ztalab.2026@email.com"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New submission!"
+                  />
+                  <input
+                    type="hidden"
+                    name="_cc"
+                    value="rayathossain49@email.com,founders@ztalab.com,rayat@ztalab.com"
+                  />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="text"
+                    name="_honey"
+                    style={{ display: "none" }}
+                  />
                   {/* Name & Email Fields */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
@@ -198,6 +218,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="Your Name"
                         value={formData.name}
@@ -213,6 +234,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="your.email@company.com"
                         value={formData.email}
@@ -224,37 +246,51 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  {/* Service Required Selection Pills */}
+                  {/* Service Required Selection */}
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2.5">
                       Service Required
                     </label>
-                    <div className="flex flex-wrap gap-2">
-                      {services.map((item) => (
-                        <button
-                          key={item}
-                          type="button"
-                          onClick={() =>
-                            setFormData({ ...formData, service: item })
-                          }
-                          className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                            formData.service === item
-                              ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                              : "bg-background text-gray-300 border border-border hover:border-muted-foreground"
-                          }`}
-                        >
-                          {item}
-                        </button>
-                      ))}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {services.map((item) => {
+                        const isSelected = formData.service === item;
+                        return (
+                          <label
+                            key={item}
+                            className={`flex items-center gap-3 p-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                              isSelected
+                                ? "bg-primary/10 border-primary text-foreground shadow-sm shadow-primary/10"
+                                : "bg-background text-muted-foreground border-border hover:border-muted-foreground/50 hover:text-foreground"
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              name="service"
+                              value={item}
+                              checked={isSelected}
+                              onChange={() =>
+                                setFormData({ ...formData, service: item })
+                              }
+                              className="w-4 h-4 text-primary bg-background border-border focus:ring-primary focus:ring-offset-0 shrink-0 accent-primary cursor-pointer"
+                            />
+                            <span>{item}</span>
+                          </label>
+                        );
+                      })}
                     </div>
                   </div>
 
                   {/* Project Message Textarea */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
+                      id="message"
+                      name="message"
                       rows={5}
                       required
                       placeholder="Tell us about your project, goals, or inquiry..."
