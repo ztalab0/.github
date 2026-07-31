@@ -23,19 +23,19 @@ export default function BrandMarquee() {
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-linear-to-r from-card to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-linear-to-l from-card to-transparent z-10 pointer-events-none" />
 
-        <div className="flex animate-marquee space-x-6 sm:space-x-8 items-center">
-          {brandLogos.map((brand, idx) => {
+        <div className="flex animate-marquee space-x-5 sm:space-x-6 items-center">
+          {[...brandLogos, ...brandLogos].map((brand, idx) => {
             const name = brand.split(".")[0];
             const publicUrl = `/assets/collab/${brand}`;
             return (
               <div
                 key={`${name}-${idx}`}
-                className="h-16 sm:h-20 w-36 sm:w-48 px-4 py-2.5 bg-background/60 backdrop-blur-xs rounded-2xl border border-border/60 flex items-center justify-center shrink-0 hover:border-primary/50 hover:bg-background/90 hover:shadow-lg transition-all duration-300 group"
+                className="h-14 sm:h-16 w-32 sm:w-40 p-2 bg-white/90 hover:bg-white backdrop-blur-md rounded-xl border border-white/30 flex items-center justify-center shrink-0 shadow-xs hover:shadow-md transition-all duration-300 group"
               >
                 <img
                   src={publicUrl}
                   alt={name}
-                  className="max-h-10 sm:max-h-12 max-w-[120px] sm:max-w-[155px] w-auto h-auto object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-90 group-hover:opacity-100 transition-all duration-300 mix-blend-multiply"
                 />
               </div>
             );
@@ -45,3 +45,4 @@ export default function BrandMarquee() {
     </section>
   );
 }
+
