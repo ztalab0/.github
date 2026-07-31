@@ -21,6 +21,8 @@ import {
   ExternalLink,
   X,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 interface InHouseSoftware {
@@ -36,6 +38,13 @@ interface InHouseSoftware {
 
 export default function OurServices() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [expandedServices, setExpandedServices] = useState<string[]>([]);
+
+  const toggleServiceExpand = (id: string) => {
+    setExpandedServices((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   const sampleSoftware: InHouseSoftware[] = [
     {
@@ -281,93 +290,118 @@ export default function OurServices() {
         </div>
 
         {/* 3 Main Grouped Service Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-20">
           {groupedServices.map((service) => {
             const IconComp = service.icon;
+            const isExpanded = expandedServices.includes(service.id);
+
             return (
               <div
                 key={service.id}
-                className="group glass-panel bg-card/90 p-7 sm:p-9 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden"
+                className="group glass-panel bg-card/90 p-6 sm:p-7 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden"
               >
                 {/* Subtle Card Accent Gradient */}
                 <div
-                  className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${service.accentColor} rounded-bl-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${service.accentColor} rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
                 />
 
                 <div>
                   {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-md">
-                      <IconComp className="w-7 h-7" />
+                  <div className="flex items-center justify-between gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-md">
+                      <IconComp className="w-6 h-6" />
                     </div>
                     <span
-                      className={`text-[11px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full border ${service.pillBadgeColor}`}
+                      className={`text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border ${service.pillBadgeColor}`}
                     >
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Title & Short Description */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">
                     {service.shortDesc}
                   </p>
 
-                  {/* Key Pillars */}
-                  <div className="space-y-3 mb-8 pt-4 border-t border-border/50">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-2">
-                      Key Highlights:
-                    </span>
-                    {service.pillars.map((pillar) => (
-                      <div
-                        key={pillar.name}
-                        className="flex items-start gap-2.5"
-                      >
-                        <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-bold text-foreground">
-                            {pillar.name}
-                          </p>
-                          <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">
-                            {pillar.desc}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tech Badges */}
-                  <div className="flex flex-wrap gap-1.5 mb-8">
-                    {service.techStack.map((tech) => (
+                  {/* Tech Badges Preview (Always concise) */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {(isExpanded ? service.techStack : service.techStack.slice(0, 4)).map((tech) => (
                       <span
                         key={tech}
-                        className="text-[10px] font-medium bg-secondary/80 text-gray-300 px-2.5 py-1 rounded-md border border-border/60"
+                        className="text-[10px] font-medium bg-secondary/80 text-gray-300 px-2 py-0.5 rounded-md border border-border/60"
                       >
                         {tech}
                       </span>
                     ))}
+                    {!isExpanded && service.techStack.length > 4 && (
+                      <span className="text-[10px] font-medium bg-secondary/40 text-muted-foreground px-2 py-0.5 rounded-md">
+                        +{service.techStack.length - 4} more
+                      </span>
+                    )}
                   </div>
+
+                  {/* Expandable Section: Key Highlights & Full Details */}
+                  {isExpanded && (
+                    <div className="space-y-3 pt-4 mb-6 border-t border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-2">
+                        Key Highlights:
+                      </span>
+                      {service.pillars.map((pillar) => (
+                        <div
+                          key={pillar.name}
+                          className="flex items-start gap-2.5"
+                        >
+                          <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <div>
+                            <p className="text-xs font-bold text-foreground">
+                              {pillar.name}
+                            </p>
+                            <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                              {pillar.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                {/* Bottom Actions */}
-                <div className="pt-6 border-t border-border/50 flex items-center justify-between gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setActiveModal(service.id)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary hover:text-emerald-400 transition-colors"
-                  >
-                    <span>Full Spec & Details</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
+                {/* Bottom Actions Row */}
+                <div className="pt-4 border-t border-border/50 flex items-center justify-between gap-3 mt-2">
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => toggleServiceExpand(service.id)}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 text-xs font-bold transition-all cursor-pointer"
+                    >
+                      <span>{isExpanded ? "Show Less" : "See More"}</span>
+                      {isExpanded ? (
+                        <ChevronUp className="w-3.5 h-3.5" />
+                      ) : (
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      )}
+                    </button>
+
+                    {isExpanded && (
+                      <button
+                        type="button"
+                        onClick={() => setActiveModal(service.id)}
+                        className="text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+                      >
+                        Full Spec Modal
+                      </button>
+                    )}
+                  </div>
 
                   <a
                     href="#contact"
-                    className="w-10 h-10 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors shadow-md shrink-0"
+                    className="w-8 h-8 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors shadow-md shrink-0"
                     aria-label={`Inquire ${service.title}`}
                   >
-                    <ArrowUpRight className="w-5 h-5" />
+                    <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
