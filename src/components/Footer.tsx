@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, ArrowUp, Mail, MapPin } from "lucide-react";
+import { ArrowUp, Mail, MapPin } from "lucide-react";
 import {
   FacebookIcon,
   UpworkIcon,
@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border text-gray-300 pt-16 pb-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Header Row with Logo & Quick Phone Callout */}
+        {/* Top Header Row with Logo & Quick Contact Callout */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-border/60">
           <a href="#hero" className="flex items-center gap-3 group">
             <img
@@ -27,10 +27,10 @@ export default function Footer() {
             />
           </a>
 
-          {/* Quick Call Callout Box */}
+          {/* Quick Contact Callout Box */}
           <div className="flex items-center gap-4 bg-secondary/80 border border-border px-6 py-3.5 rounded-full shadow-lg">
             <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40 shrink-0">
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
               <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
@@ -38,17 +38,20 @@ export default function Footer() {
               </span>
               <div className="flex items-center gap-3 text-xs sm:text-sm font-extrabold text-foreground">
                 <a
-                  href="tel:+8801976540046"
+                  href="mailto:info@ztalab.com"
                   className="hover:text-primary transition-colors"
                 >
-                  +8801976540046
+                  info@ztalab.com
                 </a>
                 <span className="text-muted-foreground">|</span>
                 <a
-                  href="tel:+8801712345678"
-                  className="hover:text-primary transition-colors"
+                  href="https://wa.me/8801976540046"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary transition-colors flex items-center gap-1"
                 >
-                  +8801712345678
+                  <WhatsappIcon className="w-3.5 h-3.5 text-primary" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </div>

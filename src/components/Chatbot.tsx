@@ -94,7 +94,7 @@ export default function Chatbot() {
         botResponse = {
           id: (Date.now() + 1).toString(),
           sender: "bot",
-          text: "You can reach out to us directly:\n• Phone: +8801976540046 / +8801712345678\n• Email: info@ztalab.com\n• Location: Dhaka, Bangladesh",
+          text: "You can reach out to us directly:\n• Email: info@ztalab.com\n• WhatsApp: +8801976540046\n• Facebook: facebook.com/ztalab\n• Location: Dhaka, Bangladesh",
           cta: {
             text: "Go to Contact Form",
             href: "#contact",
