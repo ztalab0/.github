@@ -42,7 +42,7 @@ export default function OurServices() {
 
   const toggleServiceExpand = (id: string) => {
     setExpandedServices((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
@@ -302,7 +302,7 @@ export default function OurServices() {
               >
                 {/* Subtle Card Accent Gradient */}
                 <div
-                  className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${service.accentColor} rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute top-0 right-0 w-40 h-40 bg-linear-to-bl ${service.accentColor} rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
                 />
 
                 <div>
@@ -328,7 +328,10 @@ export default function OurServices() {
 
                   {/* Tech Badges Preview (Always concise) */}
                   <div className="flex flex-wrap gap-1 mb-4">
-                    {(isExpanded ? service.techStack : service.techStack.slice(0, 4)).map((tech) => (
+                    {(isExpanded
+                      ? service.techStack
+                      : service.techStack.slice(0, 4)
+                    ).map((tech) => (
                       <span
                         key={tech}
                         className="text-[10px] font-medium bg-secondary/80 text-gray-300 px-2 py-0.5 rounded-md border border-border/60"
