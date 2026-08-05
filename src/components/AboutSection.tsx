@@ -29,14 +29,14 @@ export default function AboutSection() {
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden border border-border shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
                     alt="ZTA Lab Agile Engineering Workflow"
                     className="w-full h-60 object-cover"
                   />
                 </div>
-                <div className="glass-panel p-6 rounded-3xl border border-border">
+                <div className="group glass-panel p-6 rounded-3xl border border-border">
                   <div className="flex items-center gap-3 mb-2">
-                    <Rocket className="w-6 h-6 text-primary" />
+                    <Rocket className="w-6 h-6 text-primary transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-12" />
                     <span className="text-xl font-bold text-foreground">
                       Agile Delivery
                     </span>
@@ -49,9 +49,9 @@ export default function AboutSection() {
               </div>
 
               <div className="space-y-4 pt-8">
-                <div className="glass-panel p-6 rounded-3xl border border-border">
+                <div className="group glass-panel p-6 rounded-3xl border border-border">
                   <div className="flex items-center gap-3 mb-2">
-                    <Target className="w-6 h-6 text-primary" />
+                    <Target className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                     <span className="text-xl font-bold text-foreground">
                       Result-Oriented
                     </span>
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 </div>
                 <div className="rounded-3xl overflow-hidden border border-border shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80"
                     alt="Result-Oriented Digital Growth Strategy"
                     className="w-full h-60 object-cover"
                   />
@@ -113,8 +113,8 @@ export default function AboutSection() {
             {/* Key Highlights */}
             <div className="mt-6 space-y-3">
               {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <div key={item} className="group flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 transition-transform duration-300 group-hover:scale-125" />
                   <span className="text-sm font-semibold text-gray-200">
                     {item}
                   </span>

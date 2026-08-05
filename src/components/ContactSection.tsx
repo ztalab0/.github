@@ -7,13 +7,6 @@ import {
 } from "lucide-react";
 import { FacebookIcon } from "./SocialIcons";
 
-const services = [
-  "Web & Mobile Development + AI Integration",
-  "Software Dev & In-House Products",
-  "Digital Marketing, SEO & Business Automation",
-  "Custom Enterprise Requirement",
-];
-
 export default function ContactSection() {
   return (
     <section
@@ -48,9 +41,9 @@ export default function ContactSection() {
                 Get In Touch
               </h3>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border">
-                  <Mail className="w-6 h-6" />
+              <div className="group flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border transition-transform duration-300 group-hover:scale-110">
+                  <Mail className="w-6 h-6 transition-transform duration-300 group-hover:-rotate-12" />
                 </div>
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -88,21 +81,21 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border">
-                  <MessageSquare className="w-6 h-6" />
+              <div className="group flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border transition-transform duration-300 group-hover:scale-110">
+                  <MessageSquare className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" />
                 </div>
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     WhatsApp Us
                   </span>
                   <a
-                    href="https://wa.me/8801976540046"
+                    href="https://wa.me/8801881064859"
                     target="_blank"
                     rel="noreferrer"
                     className="block text-sm sm:text-base font-bold text-foreground mt-0.5 hover:text-primary transition-colors"
                   >
-                    +8801976540046
+                    +880 1881-064859
                   </a>
                   <p className="text-xs text-gray-400">
                     Instant Chat & Consultation
@@ -110,9 +103,9 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 pt-4 border-t border-border/50">
-                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border">
-                  <MapPin className="w-6 h-6" />
+              <div className="group flex items-start gap-4 pt-4 border-t border-border/50">
+                <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border transition-transform duration-300 group-hover:scale-110">
+                  <MapPin className="w-6 h-6 transition-transform duration-300 group-hover:-translate-y-0.5" />
                 </div>
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -172,31 +165,17 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Service Required Selection */}
+                {/* Business Name Field */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2.5">
-                    Service Required
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
+                    Your Business Name
                   </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {services.map((item) => {
-                      return (
-                        <label
-                          key={item}
-                          className="flex items-center gap-3 p-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer border
-                            bg-background text-muted-foreground border-border hover:border-muted-foreground/50 hover:text-foreground
-                            has-checked:bg-primary/10 has-checked:border-primary has-checked:text-foreground has-checked:shadow-sm has-checked:shadow-primary/10"
-                        >
-                          <input
-                            type="radio"
-                            name="service"
-                            value={item}
-                            className="w-4 h-4 text-primary bg-background border-border focus:ring-primary focus:ring-offset-0 shrink-0 accent-primary cursor-pointer"
-                          />
-                          <span>{item}</span>
-                        </label>
-                      );
-                    })}
-                  </div>
+                  <input
+                    type="text"
+                    name="business_name"
+                    placeholder="Your Business Name"
+                    className="w-full px-4 py-3.5 rounded-xl bg-background border border-border text-foreground focus:outline-none transition-colors text-sm"
+                  />
                 </div>
 
                 {/* Project Message Textarea */}
@@ -220,10 +199,10 @@ export default function ContactSection() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
+                  className="group w-full py-4 rounded-xl bg-primary text-primary-foreground font-extrabold text-sm tracking-wider hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
                 >
                   <span>Send Message</span>
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
                 </button>
               </form>
             </div>

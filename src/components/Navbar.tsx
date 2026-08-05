@@ -37,11 +37,20 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Official Brand Logo - Scaled Up & Visible */}
-          <a href="#hero" className="flex items-center gap-3 group">
+          <a
+            href="#hero"
+            className="relative flex items-center gap-3 group h-12 sm:h-14 md:h-16"
+          >
             <img
               src="/assets/LOGO/SVG Lgos/White with no BG.svg"
               alt="ZTA Lab Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:opacity-0 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
+            />
+            <img
+              src="/assets/LOGO/SVG Lgos/Brand Color 2.svg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-y-0 left-0 h-12 sm:h-14 md:h-16 w-auto object-contain opacity-0 scale-105 transition-all duration-300 group-hover:opacity-100 drop-shadow-[0_0_16px_rgba(38,224,156,0.65)]"
             />
           </a>
 
