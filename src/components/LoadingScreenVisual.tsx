@@ -1,3 +1,5 @@
+"use client";
+
 const BRAND_NAME = "ZTA LAB";
 
 interface LoadingScreenVisualProps {
