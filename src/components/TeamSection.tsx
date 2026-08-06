@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Sparkles, Mail, X, Copy, Check, Send } from "lucide-react";
-import { LinkedinIcon, GithubIcon } from "./SocialIcons";
+import { Check, Copy, Mail, Send, Sparkles, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 
 const teamMembers = [
   {
@@ -40,15 +40,28 @@ export default function TeamSection() {
   >(null);
   const [entered, setEntered] = useState(false);
   const [copied, setCopied] = useState(false);
+  const closeTimeoutRef = useRef<number | null>(null);
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current !== null) {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
 
   const openEmailPopup = (member: (typeof teamMembers)[number]) => {
+    clearCloseTimeout();
     setActiveMember(member);
     setCopied(false);
   };
 
   const closeEmailPopup = () => {
+    clearCloseTimeout();
     setEntered(false);
-    window.setTimeout(() => setActiveMember(null), EXIT_MS);
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setActiveMember(null);
+      closeTimeoutRef.current = null;
+    }, EXIT_MS);
   };
 
   // Trigger the slide-in transition on the next frame after mounting.
@@ -174,10 +187,8 @@ export default function TeamSection() {
       {activeMember && (
         <>
           {/* Invisible click-catcher to dismiss on outside click */}
-          <button
-            type="button"
-            aria-label="Close email popup"
-            tabIndex={-1}
+          <div
+            aria-hidden="true"
             onClick={closeEmailPopup}
             className="fixed inset-0 z-[65] cursor-default"
           />
