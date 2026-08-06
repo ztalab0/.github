@@ -13,6 +13,14 @@ export default function Hero() {
       id="hero"
       className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-background"
     >
+      {/* Hero Background Image */}
+      <img
+        src="/assets/hero/Hero.webp"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none select-none"
+      />
+
       {/* Background Decorative Subtle Radial Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-112.5 h-112.5 bg-secondary/60 rounded-full blur-[120px] pointer-events-none" />
@@ -65,11 +73,11 @@ export default function Hero() {
             <GithubIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/8801976540046"
+            href="https://wa.me/8801881064859"
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"
-            title="WhatsApp (+8801976540046)"
+            title="WhatsApp (+880 1881-064859)"
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <WhatsappIcon className="w-4 h-4" />
@@ -111,7 +119,7 @@ export default function Hero() {
               >
                 <span>View Our Work</span>
                 <span className="w-7 h-7 rounded-full bg-secondary text-primary flex items-center justify-center transition-colors">
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
                 </span>
               </a>
             </div>
@@ -154,7 +162,7 @@ export default function Hero() {
             <div className="relative w-75 h-75 sm:w-95 sm:h-95 rounded-3xl p-3 bg-linear-to-tr from-primary/30 via-secondary to-card shadow-2xl shadow-primary/10 border border-border">
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
                   alt="ZTA Lab Digital Agency Team"
                   className="w-full h-full object-cover"
                 />

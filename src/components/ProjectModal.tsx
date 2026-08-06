@@ -38,9 +38,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-full bg-secondary text-gray-300 hover:text-white hover:bg-border transition-colors"
+            className="group p-2 rounded-full bg-secondary text-gray-300 hover:text-white hover:bg-border transition-colors"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" />
           </button>
         </div>
 
@@ -125,10 +125,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <a
             href="#contact"
             onClick={onClose}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:opacity-90 transition-opacity"
+            className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:opacity-90 transition-opacity"
           >
             <span>Request Similar Project</span>
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>

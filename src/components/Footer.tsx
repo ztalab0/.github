@@ -28,9 +28,9 @@ export default function Footer() {
           </a>
 
           {/* Quick Contact Callout Box */}
-          <div className="flex items-center gap-4 bg-secondary/80 border border-border px-6 py-3.5 rounded-full shadow-lg">
-            <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40 shrink-0">
-              <Mail className="w-5 h-5" />
+          <div className="group flex items-center gap-4 bg-secondary/80 border border-border px-6 py-3.5 rounded-full shadow-lg">
+            <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border border-primary/40 shrink-0 transition-transform duration-300 group-hover:scale-110">
+              <Mail className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-12" />
             </div>
             <div className="flex flex-col">
               <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
@@ -45,7 +45,7 @@ export default function Footer() {
                 </a>
                 <span className="text-muted-foreground">|</span>
                 <a
-                  href="https://wa.me/8801976540046"
+                  href="https://wa.me/8801881064859"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-primary transition-colors flex items-center gap-1"
@@ -68,12 +68,12 @@ export default function Footer() {
               integrations, and digital marketing strategies.
             </p>
             <div className="space-y-2 pt-2 text-xs text-gray-300">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary shrink-0" />
+              <div className="group flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-primary shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5" />
                 <span>Dhaka, Bangladesh</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary shrink-0" />
+              <div className="group flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary shrink-0 transition-transform duration-300 group-hover:-rotate-12" />
                 <a
                   href="mailto:info@ztalab.com"
                   className="hover:text-primary transition-colors"
@@ -184,11 +184,11 @@ export default function Footer() {
                 <GithubIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/8801976540046"
+                href="https://wa.me/8801881064859"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
-                title="WhatsApp (+8801976540046)"
+                title="WhatsApp (+880 1881-064859)"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <WhatsappIcon className="w-4 h-4" />
@@ -220,9 +220,9 @@ export default function Footer() {
               type="button"
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="w-10 h-10 rounded-full bg-secondary hover:bg-primary text-primary hover:text-primary-foreground flex items-center justify-center border border-border transition-all shadow-lg ml-2"
+              className="group w-10 h-10 rounded-full bg-secondary hover:bg-primary text-primary hover:text-primary-foreground flex items-center justify-center border border-border transition-all shadow-lg ml-2"
             >
-              <ArrowUp className="w-4 h-4" />
+              <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-1" />
             </button>
           </div>
         </div>

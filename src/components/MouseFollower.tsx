@@ -1,26 +1,52 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function MouseFollower() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Only enable the custom cursor on desktop (fine pointer + wide viewport) —
+  // never on touch/mobile devices.
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 768px) and (pointer: fine)");
+    const update = () => setIsDesktop(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
+
+    // Real (target) cursor position, updated instantly on mousemove.
+    const target = { x: -100, y: -100 };
+    // Current rendered positions for the dot (fast) and ring (slow),
+    // eased toward the target every frame — this is what produces the
+    // trailing/spring "lag" physics seen in the reference animation.
+    const dot = { x: -100, y: -100 };
+    const ring = { x: -100, y: -100 };
+    const DOT_EASE = 0.35;
+    const RING_EASE = 0.12;
+    let rafId = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      target.x = e.clientX;
+      target.y = e.clientY;
       if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+      const el = e.target as HTMLElement;
       if (
-        target.closest("button") ||
-        target.closest("a") ||
-        target.closest("input") ||
-        target.closest("textarea") ||
-        target.closest(".interactive")
+        el.closest("button") ||
+        el.closest("a") ||
+        el.closest("input") ||
+        el.closest("textarea") ||
+        el.closest(".interactive")
       ) {
         setIsHovered(true);
       } else {
@@ -28,49 +54,57 @@ export default function MouseFollower() {
       }
     };
 
-    const handleMouseLeave = () => {
-      setIsVisible(false);
+    const handleMouseLeave = () => setIsVisible(false);
+
+    const tick = () => {
+      dot.x += (target.x - dot.x) * DOT_EASE;
+      dot.y += (target.y - dot.y) * DOT_EASE;
+      ring.x += (target.x - ring.x) * RING_EASE;
+      ring.y += (target.y - ring.y) * RING_EASE;
+
+      // translate(-50%, -50%) keeps each element centered on its point
+      // regardless of its current (possibly hover-animated) size.
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${dot.x}px, ${dot.y}px, 0) translate(-50%, -50%)`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0) translate(-50%, -50%)`;
+      }
+      rafId = requestAnimationFrame(tick);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
+    rafId = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      cancelAnimationFrame(rafId);
     };
-  }, [isVisible]);
+  }, [isDesktop]);
 
-  if (!isVisible) return null;
+  if (!isDesktop || !isVisible) return null;
 
   return (
     <>
-      {/* Outer Circle */}
+      {/* Outer Ring — trails behind with more lag (circular, not rectangular) */}
       <div
-        className={`fixed top-0 left-0 pointer-events-none z-50 rounded-circle transition-transform duration-100 ease-out ${
+        ref={ringRef}
+        className={`fixed top-0 left-0 pointer-events-none z-50 rounded-full border transition-[width,height,background-color,border-color] duration-200 ease-out ${
           isHovered
-            ? "scale-150 border-[#26E09C] bg-[#26E09C]/10"
-            : "border-[#8EB69B]/40 bg-transparent"
+            ? "w-14 h-14 border-[#26E09C] bg-[#26E09C]/10"
+            : "w-9 h-9 border-[#8EB69B]/40 bg-transparent"
         }`}
-        style={{
-          width: "36px",
-          height: "36px",
-          borderWidth: "1px",
-          transform: `translate3d(${position.x - 18}px, ${position.y - 18}px, 0) ${
-            isHovered ? "scale(1.5)" : "scale(1)"
-          }`,
-        }}
+        style={{ borderWidth: "1px", willChange: "transform" }}
       />
-      {/* Inner Dot */}
+      {/* Inner Dot — tracks the cursor closely */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-circle bg-[#26E09C]"
-        style={{
-          width: "6px",
-          height: "6px",
-          transform: `translate3d(${position.x - 3}px, ${position.y - 3}px, 0)`,
-        }}
+        ref={dotRef}
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full bg-[#26E09C] w-1.5 h-1.5"
+        style={{ willChange: "transform" }}
       />
     </>
   );

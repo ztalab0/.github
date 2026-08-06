@@ -6,7 +6,7 @@ const testimonials = [
     name: "Sarah Sanders",
     role: "VP of Digital, Commerce Global",
     avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
     content:
       "ZTA Lab transformed our online presence into a lightning-fast modern web application. Their technical precision and creative vision exceeded all our expectations.",
     rating: 5,
@@ -16,7 +16,7 @@ const testimonials = [
     name: "Marcus Vance",
     role: "Founder & CEO, Nexus Tech",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
     content:
       "Working with ZTA Lab was seamless from day one. They developed our custom web and mobile app suite on schedule with flawless reliability and design.",
     rating: 5,
@@ -26,7 +26,7 @@ const testimonials = [
     name: "Elena Rostova",
     role: "Marketing Director, Aura Luxe",
     avatar:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
     content:
       "Our traffic and client conversions grew dramatically after ZTA Lab implemented our digital marketing and SEO strategy. Truly world-class agency partners.",
     rating: 5,
@@ -36,7 +36,7 @@ const testimonials = [
     name: "David H. Sterling",
     role: "Managing Director, Apex Brands",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
     content:
       "The team at ZTA Lab is dedicated, skilled, and transparent. They delivered a custom enterprise platform tailored exactly to our business needs.",
     rating: 5,

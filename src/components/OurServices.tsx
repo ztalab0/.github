@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { cn } from "../lib/utils";
 import {
-  ArrowUpRight,
   Sparkles,
   Globe,
   TrendingUp,
   CheckCircle,
   Code2,
+  Bot,
+  Palette,
   Download,
   X,
   ChevronDown,
@@ -74,132 +75,239 @@ const sampleSoftware: InHouseSoftware[] = [
   },
 ];
 
-const groupedServices = [
+interface SubService {
+  id: string;
+  name: string;
+  shortDesc: string;
+  includes: string;
+  delivery: string;
+  value: string;
+}
+
+interface ServiceCategory {
+  id: string;
+  badge: string;
+  title: string;
+  shortDesc: string;
+  icon: typeof Globe;
+  accentColor: string;
+  pillBadgeColor: string;
+  subServices: SubService[];
+}
+
+const serviceCategories: ServiceCategory[] = [
   {
-    id: "web-mobile-ai",
-    groupTag: "Group 01",
-    badge: "Web, Mobile & AI Solutions",
-    title: "Web & Mobile Development + AI Integration",
+    id: "web-software",
+    badge: "Web & Software",
+    title: "Web & Software",
     shortDesc:
-      "High-performance website engineering (Frontend & Backend), native/cross-platform mobile apps for Android & iOS, alongside client-tailored AI Agents and 24/7 AI Sales Reps.",
+      "Full-stack websites, e-commerce stores, and bespoke software engineered around your exact requirements.",
     icon: Globe,
     accentColor: "from-emerald-500/20 to-primary/10",
     pillBadgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
-    pillars: [
+    subServices: [
       {
-        name: "Full-Stack Web Engineering",
-        desc: "Responsive React/Next.js frontends, scalable Node/Python backends, REST/GraphQL APIs, and cloud database architecture.",
+        id: "web-fullstack",
+        name: "Websites and Web Applications (Full Stack)",
+        shortDesc:
+          "Modern, high-performance websites and web apps built end-to-end.",
+        includes:
+          "Custom frontend interfaces, scalable backend systems, database architecture, and secure API integrations tailored to your business logic.",
+        delivery:
+          "Our team handles the full lifecycle — discovery, UI/UX design, development, QA, and deployment — using modern frameworks like Next.js and Node.js.",
+        value:
+          "You get a fast, reliable, and easy-to-maintain platform that grows with your business instead of becoming a liability.",
       },
       {
-        name: "Android & iOS App Development",
-        desc: "Seamless cross-platform mobile apps, native device integration, offline sync, push notifications, and App Store / Play Store deployment.",
+        id: "ecommerce",
+        name: "E-commerce Stores",
+        shortDesc: "Conversion-focused online stores that sell around the clock.",
+        includes:
+          "Product catalog management, secure checkout and payment integration, inventory sync, and mobile-optimized storefronts.",
+        delivery:
+          "We build on proven, flexible foundations and customize every step of the shopping experience to match your brand and operational needs.",
+        value:
+          "A smoother buying journey means higher conversion rates, fewer abandoned carts, and a store you can scale confidently.",
       },
       {
-        name: "Client-Tailored AI & AI Sales Man",
-        desc: "Autonomous 24/7 AI Sales Agent designed to engage website visitors, qualify leads, answer product queries, and automate sales pipelines.",
+        id: "custom-software",
+        name: "Custom Software Built to Client Requirements",
+        shortDesc: "Bespoke tools engineered around your specific workflow.",
+        includes:
+          "Requirement analysis, system architecture design, and development of desktop, web, or internal enterprise tools.",
+        delivery:
+          "We work closely with your team to map real operational needs into a precise technical specification before building anything.",
+        value:
+          "Software that fits your business exactly — no paying for features you don't need, no working around ones you do.",
       },
-    ],
-    subFeatures: [
-      "Frontend & Backend Custom Web Systems",
-      "iOS & Android Native / Cross-Platform Apps",
-      "AI Sales Man Chatbot (Custom Client Rules)",
-      "Fine-Tuned LLMs & Vector Database RAG",
-      "Lead Capture & Sales Funnel Integration",
-      "High-Security Cloud & API Architecture",
-    ],
-    techStack: [
-      "Next.js",
-      "React Native",
-      "Node.js",
-      "Python",
-      "OpenAI API",
-      "Gemini AI",
-      "PostgreSQL",
-      "Tailwind CSS",
     ],
   },
   {
-    id: "software-dev-products",
-    groupTag: "Group 02",
-    badge: "Custom Dev & In-House Products",
-    title: "Software Development & In-House Products",
+    id: "ai-systems",
+    badge: "AI & Systems",
+    title: "AI & Systems",
     shortDesc:
-      "Bespoke software solutions built precisely to client specifications, plus ZTA Lab's proprietary suite of in-house software tools with direct download options and flexible subscription licensing.",
-    icon: Code2,
+      "Practical AI integration, intelligent chat and sales agents, and automation that removes manual busywork.",
+    icon: Bot,
     accentColor: "from-blue-500/20 to-primary/10",
     pillBadgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
-    pillars: [
+    subServices: [
       {
-        name: "Customised Client Software",
-        desc: "Tailor-made desktop, web, and enterprise applications engineered around your company's specific business logic and operating needs.",
+        id: "ai-integration",
+        name: "AI Integration",
+        shortDesc: "Embed practical AI capabilities into your existing systems.",
+        includes:
+          "Assessment of use cases, model selection, and integration of AI into your website, app, or internal tools.",
+        delivery:
+          "We connect proven AI providers and fine-tuned models to your data through secure, well-tested pipelines.",
+        value:
+          "You unlock automation and intelligence in your product without the overhead of building AI infrastructure from scratch.",
       },
       {
-        name: "In-House Made Software Showcase",
-        desc: "Explore ready-to-use software built by ZTA Lab. Featured with direct links on our site, version logs, and product showcases.",
+        id: "ai-chatbots",
+        name: "AI Chatbots and AI Sales Agents",
+        shortDesc: "24/7 conversational agents that qualify leads and support customers.",
+        includes:
+          "A trained AI assistant with your business knowledge base, lead qualification logic, and CRM or booking integration.",
+        delivery:
+          "We design conversation flows around your sales process, then train and deploy the agent on your website or messaging channels.",
+        value:
+          "Round-the-clock engagement that captures leads and answers questions instantly, even outside business hours.",
       },
       {
-        name: "Direct Download Hub & Subscriptions",
-        desc: "One-click GetIntoPC-style fast installer downloads (Setup / Portable / Standalone) with flexible monthly, annual, or license-key subscription models.",
+        id: "business-automation",
+        name: "Business Process Automation",
+        shortDesc: "Remove repetitive manual work from daily operations.",
+        includes:
+          "Mapping of manual workflows, and automation of tasks across CRMs, spreadsheets, emails, and internal tools.",
+        delivery:
+          "We identify the highest-friction manual steps in your operations and replace them with reliable automated pipelines.",
+        value:
+          "Your team spends less time on repetitive tasks and more time on work that actually grows the business.",
       },
-    ],
-    subFeatures: [
-      "Client Requirement-Based Custom Engineering",
-      "ZTA Lab In-House Software Showcase Portal",
-      "Direct Setup & Installer Download Options",
-      "Flexible Subscription & License Key System",
-      "Background Auto-Updates & Cloud Sync",
-      "Cross-Platform Windows / Mac / Linux Builds",
-    ],
-    techStack: [
-      "Electron",
-      "C# / .NET",
-      "Go",
-      "Python",
-      "TypeScript",
-      "Docker",
-      "Stripe Subscription API",
-      "SQLite / Cloud DB",
     ],
   },
   {
-    id: "marketing-seo-automation",
-    groupTag: "Group 03",
-    badge: "Growth & Automation",
-    title: "Digital Marketing, SEO & Business Automation",
+    id: "brand-content",
+    badge: "Brand & Content",
+    title: "Brand & Content",
     shortDesc:
-      "Data-driven marketing campaigns, technical & content SEO optimization, and intelligent business process automation tailored to streamline operations and scale your revenue.",
-    icon: TrendingUp,
+      "Identity, design, and content production that gives your business a distinct, professional presence.",
+    icon: Palette,
     accentColor: "from-purple-500/20 to-primary/10",
     pillBadgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
-    pillars: [
+    subServices: [
       {
-        name: "Search Engine Optimization (SEO)",
-        desc: "On-page, technical & off-page SEO audits, schema markup, site speed optimization, and high-converting search rank strategy.",
+        id: "branding",
+        name: "Branding and Identity",
+        shortDesc: "A cohesive visual identity that people remember.",
+        includes:
+          "Logo design, color and typography systems, brand guidelines, and core brand messaging.",
+        delivery:
+          "We start with your positioning and audience, then translate it into a consistent visual and verbal identity across every touchpoint.",
+        value:
+          "A brand that looks intentional and consistent everywhere it appears, building trust with every impression.",
       },
       {
-        name: "Performance Digital Marketing",
-        desc: "Targeted Meta & Google Ad campaigns, conversion rate optimization (CRO), brand positioning, and social media growth funnels.",
+        id: "ui-ux",
+        name: "UI/UX Design",
+        shortDesc: "Interfaces that are as usable as they are attractive.",
+        includes:
+          "User research, wireframing, interactive prototypes, and final high-fidelity interface designs.",
+        delivery:
+          "We design with real user flows in mind, validating layouts before a single line of production code is written.",
+        value:
+          "Fewer usability issues after launch and a product experience that keeps users engaged instead of frustrated.",
       },
       {
-        name: "Client-Specific Business Automation",
-        desc: "Custom automated workflows connecting CRMs, ERPs, payment channels, automated email sequences, and webhook integrations.",
+        id: "video-graphics",
+        name: "Video Editing, Reels, and Graphic Design",
+        shortDesc: "Scroll-stopping visual content for every platform.",
+        includes:
+          "Short-form video edits, social media reels, promotional graphics, and campaign visual assets.",
+        delivery:
+          "Our creative team edits and designs around your brand guidelines, optimized for how each platform is actually consumed.",
+        value:
+          "Consistent, professional visual content that keeps your social presence active without draining your internal resources.",
+      },
+      {
+        id: "ai-content",
+        name: "AI-Generated Content",
+        shortDesc: "Scalable content production accelerated by AI tools.",
+        includes:
+          "AI-assisted copywriting, image generation, and content drafts refined with human editorial oversight.",
+        delivery:
+          "We use AI tools to accelerate first drafts and variations, then apply human review to keep quality and brand voice intact.",
+        value:
+          "Faster content turnaround and higher output volume, without sacrificing the polish of professionally reviewed work.",
       },
     ],
-    subFeatures: [
-      "Comprehensive Technical & Content SEO Audits",
-      "Meta Ads & Google PPC Performance Campaigns",
-      "Custom Business Process Automation Pipelines",
-      "CRM, ERP & Payment Gateway API Sync",
-      "Automated Lead Capture & Email Nurturing",
-      "Real-Time ROI & Conversion Analytics",
-    ],
-    techStack: [
-      "Google Analytics 4",
-      "Meta Business Suite",
-      "Zapier / Make",
-      "Custom Webhooks",
-      "SEO Schema",
-      "Ahrefs / SEMrush",
+  },
+  {
+    id: "digital-marketing",
+    badge: "Digital Marketing",
+    title: "Digital Marketing",
+    shortDesc:
+      "Data-driven acquisition and growth — from search visibility to paid campaigns and lead generation.",
+    icon: TrendingUp,
+    accentColor: "from-amber-500/20 to-primary/10",
+    pillBadgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+    subServices: [
+      {
+        id: "seo",
+        name: "SEO",
+        shortDesc: "Higher organic visibility that compounds over time.",
+        includes:
+          "Technical SEO audits, on-page optimization, content strategy, and ongoing search performance tracking.",
+        delivery:
+          "We diagnose what's holding your rankings back, then execute a prioritized roadmap of technical and content fixes.",
+        value:
+          "Sustainable organic traffic growth that reduces your long-term dependency on paid acquisition.",
+      },
+      {
+        id: "paid-ads",
+        name: "Paid Advertising (Meta & Google)",
+        shortDesc: "Targeted campaigns engineered for measurable return.",
+        includes:
+          "Campaign strategy, audience targeting, ad creative, and continuous performance optimization across Meta and Google.",
+        delivery:
+          "We set clear KPIs upfront, launch structured campaigns, and iterate weekly based on real conversion data.",
+        value:
+          "Ad spend that's accountable to results, with clear reporting on cost-per-lead and return on investment.",
+      },
+      {
+        id: "social-media",
+        name: "Social Media Management",
+        shortDesc: "Consistent, on-brand presence across your key platforms.",
+        includes:
+          "Content calendars, post scheduling, community engagement, and monthly performance reporting.",
+        delivery:
+          "We plan and manage your social channels around a consistent content strategy aligned with your brand voice.",
+        value:
+          "An active, professional social presence that builds audience trust without consuming your internal team's time.",
+      },
+      {
+        id: "content-marketing",
+        name: "Content Marketing",
+        shortDesc: "Content that attracts, educates, and converts your audience.",
+        includes:
+          "Blog and article strategy, SEO-aligned content production, and distribution planning.",
+        delivery:
+          "We build a content plan around your customers' real questions, then produce and optimize content to match search intent.",
+        value:
+          "A growing library of assets that keeps attracting qualified traffic long after publication.",
+      },
+      {
+        id: "lead-generation",
+        name: "Lead Generation",
+        shortDesc: "Consistent pipelines of qualified prospects.",
+        includes:
+          "Funnel design, landing pages, lead magnets, and outreach or capture systems tailored to your ICP.",
+        delivery:
+          "We build and connect the funnel stages — from first touch to captured lead — and continuously refine based on conversion data.",
+        value:
+          "A predictable, measurable stream of qualified leads instead of relying on inconsistent word-of-mouth.",
+      },
     ],
   },
 ];
@@ -207,42 +315,43 @@ const groupedServices = [
 const processSteps = [
   {
     step: "01",
-    title: "Discovery",
-    desc: "Understanding client requirements & architecture",
+    title: "Discovery & Strategy",
+    desc: "Understanding your goals, audience, and mapping the right technical and creative approach.",
   },
   {
     step: "02",
-    title: "Strategy & UX",
-    desc: "Designing system flow, UI/UX, & tech stack",
+    title: "Design & Architecture",
+    desc: "Crafting brand direction, UI/UX, and system architecture before a single line of code is written.",
   },
   {
     step: "03",
-    title: "Engineering",
-    desc: "Building frontends, backends, apps & AI models",
+    title: "Build & Integration",
+    desc: "Engineering the product and integrating AI, automation, and third-party systems.",
   },
   {
     step: "04",
     title: "Testing & Launch",
-    desc: "Quality assurance, deployment & release",
+    desc: "Rigorous quality assurance, performance tuning, and a smooth, controlled release.",
   },
   {
     step: "05",
-    title: "Automation & Growth",
-    desc: "SEO, marketing funnels & continuous support",
+    title: "Growth & Optimization",
+    desc: "Ongoing marketing, SEO, and support to keep results compounding after launch.",
   },
 ];
 
 export default function OurServices() {
-  const [activeModal, setActiveModal] = useState<string | null>(null);
-  const [isAllExpanded, setIsAllExpanded] = useState<boolean>(false);
-
-  const toggleServiceExpand = () => {
-    setIsAllExpanded((prev) => !prev);
-  };
-
-  const selectedServiceModal = groupedServices.find(
-    (s) => s.id === activeModal,
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(
+    null,
   );
+  const [activeSubService, setActiveSubService] = useState<{
+    category: ServiceCategory;
+    sub: SubService;
+  } | null>(null);
+
+  const toggleCategory = (id: string) => {
+    setExpandedCategory((prev) => (prev === id ? null : id));
+  };
 
   return (
     <section
@@ -270,23 +379,23 @@ export default function OurServices() {
           </div>
 
           <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
-            We group our expertise into 3 comprehensive divisions—delivering
-            full-stack web/mobile apps with AI integration, custom & in-house
-            software solutions, and automated growth marketing.
+            We group our expertise into 4 comprehensive divisions—covering
+            web & software engineering, AI & systems, brand & content, and
+            digital marketing.
           </p>
         </div>
 
-        {/* 3 Main Grouped Service Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
-          {groupedServices.map((service) => {
-            const IconComp = service.icon;
-            const isExpanded = isAllExpanded;
+        {/* 4 Main Service Category Cards Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-20">
+          {serviceCategories.map((category) => {
+            const IconComp = category.icon;
+            const isExpanded = expandedCategory === category.id;
 
             return (
               <div
-                key={service.id}
+                key={category.id}
                 className={cn(
-                  "group glass-panel bg-card/90 p-6 sm:p-7 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden h-full",
+                  "group glass-panel bg-card/90 p-6 sm:p-7 rounded-3xl border border-border/80 hover:border-primary/50 shadow-2xl flex flex-col transition-all duration-300 relative overflow-hidden",
                   isExpanded && "ring-2 ring-primary/20 bg-card",
                 )}
               >
@@ -294,115 +403,71 @@ export default function OurServices() {
                 <div
                   className={cn(
                     "absolute top-0 right-0 w-40 h-40 bg-linear-to-bl rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-300",
-                    service.accentColor,
+                    category.accentColor,
                   )}
                 />
 
-                <div>
-                  {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between gap-4 mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-md">
-                      <IconComp className="w-6 h-6" />
+                {/* Category Header (click to expand) */}
+                <button
+                  type="button"
+                  onClick={() => toggleCategory(category.id)}
+                  className="flex items-start justify-between gap-4 text-left cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-md shrink-0">
+                      <IconComp className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
                     </div>
-                    <span
-                      className={cn(
-                        "text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border",
-                        service.pillBadgeColor,
-                      )}
-                    >
-                      {service.badge}
-                    </span>
-                  </div>
-
-                  {/* Title & Short Description */}
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                    {service.shortDesc}
-                  </p>
-
-                  {/* Tech Badges Preview (Always concise) */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {(isExpanded
-                      ? service.techStack
-                      : service.techStack.slice(0, 4)
-                    ).map((tech) => (
+                    <div>
                       <span
-                        key={tech}
-                        className="text-[10px] font-medium bg-secondary/80 text-gray-300 px-2 py-0.5 rounded-md border border-border/60"
+                        className={cn(
+                          "inline-block text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border mb-2",
+                          category.pillBadgeColor,
+                        )}
                       >
-                        {tech}
+                        {category.badge}
                       </span>
-                    ))}
-                    {!isExpanded && service.techStack.length > 4 && (
-                      <span className="text-xs font-medium bg-secondary/40 text-muted-foreground px-2 py-0.5 rounded-md">
-                        +{service.techStack.length - 4} more
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Expandable Section: Key Highlights & Full Details */}
-                  {isExpanded && (
-                    <div className="space-y-3 pt-4 mb-6 border-t border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-2">
-                        Key Highlights:
-                      </span>
-                      {service.pillars.map((pillar) => (
-                        <div
-                          key={pillar.name}
-                          className="flex items-start gap-2.5"
-                        >
-                          <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                          <div>
-                            <p className="text-xs font-bold text-foreground">
-                              {pillar.name}
-                            </p>
-                            <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">
-                              {pillar.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
+                        {category.title}
+                      </h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed mt-1">
+                        {category.shortDesc}
+                      </p>
                     </div>
-                  )}
-                </div>
-
-                {/* Bottom Actions Row */}
-                <div className="pt-4 border-t border-border/50 flex items-center justify-between gap-3 mt-2">
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={toggleServiceExpand}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 text-xs font-bold transition-all cursor-pointer"
-                    >
-                      <span>{isExpanded ? "Show Less" : "See More"}</span>
-                      {isExpanded ? (
-                        <ChevronUp className="w-3.5 h-3.5" />
-                      ) : (
-                        <ChevronDown className="w-3.5 h-3.5" />
-                      )}
-                    </button>
-
-                    {isExpanded && (
-                      <button
-                        type="button"
-                        onClick={() => setActiveModal(service.id)}
-                        className="text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
-                      >
-                        Full Spec Modal
-                      </button>
-                    )}
                   </div>
 
-                  <a
-                    href="#contact"
-                    className="w-8 h-8 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors shadow-md shrink-0"
-                    aria-label={`Inquire ${service.title}`}
-                  >
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
+                  <span className="w-9 h-9 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 border border-border transition-transform duration-300 group-hover:scale-110">
+                    {isExpanded ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                  </span>
+                </button>
+
+                {/* Expandable Sub-Services List */}
+                {isExpanded && (
+                  <div className="mt-6 pt-5 border-t border-border/50 space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
+                    {category.subServices.map((sub) => (
+                      <div
+                        key={sub.id}
+                        className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-secondary/50 border border-border/60"
+                      >
+                        <span className="text-xs sm:text-sm font-semibold text-foreground">
+                          {sub.name}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveSubService({ category, sub })
+                          }
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 text-[11px] font-bold transition-all cursor-pointer shrink-0"
+                        >
+                          See More
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -509,7 +574,7 @@ export default function OurServices() {
             {processSteps.map((p) => (
               <div
                 key={p.step}
-                className="glass-panel p-5 rounded-2xl border border-border/80 hover:border-primary/50 transition-all duration-300 relative flex flex-col justify-between"
+                className="glass-panel p-5 rounded-2xl border border-border/80 hover:border-primary/50 hover:shadow-[0_0_30px_-8px_rgba(38,224,156,0.45)] transition-all duration-300 relative flex flex-col justify-between"
               >
                 <div>
                   <span className="text-3xl font-black text-primary/40 block mb-2 font-mono">
@@ -528,66 +593,66 @@ export default function OurServices() {
         </div>
       </div>
 
-      {/* Feature Specs Modal Popup */}
-      {selectedServiceModal && (
+      {/* Sub-Service Details Modal */}
+      {activeSubService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md animate-fadeIn">
-          <div className="bg-card border border-border w-full max-w-3xl rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+          <div className="bg-card border border-border w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             {/* Modal Close Button */}
             <button
               type="button"
-              onClick={() => setActiveModal(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-secondary hover:bg-border text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setActiveSubService(null)}
+              className="group absolute top-6 right-6 p-2 rounded-full bg-secondary hover:bg-border text-muted-foreground hover:text-foreground transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" />
             </button>
 
             {/* Modal Header */}
-            <div className="mb-6">
+            <div className="mb-6 pr-10">
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                {selectedServiceModal.groupTag} — {selectedServiceModal.badge}
+                {activeSubService.category.badge}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-1">
-                {selectedServiceModal.title}
+                {activeSubService.sub.name}
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
-                {selectedServiceModal.shortDesc}
+                {activeSubService.sub.shortDesc}
               </p>
             </div>
 
-            {/* Deep Feature List */}
-            <div className="space-y-6 mb-8">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-foreground border-b border-border/60 pb-2">
-                Core Architectural Deliverables
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {selectedServiceModal.subFeatures.map((feat) => (
-                  <div
-                    key={feat}
-                    className="p-3.5 rounded-xl bg-secondary/60 border border-border/80 flex items-start gap-3"
-                  >
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span className="text-xs font-semibold text-foreground">
-                      {feat}
-                    </span>
-                  </div>
-                ))}
+            {/* Deep Description */}
+            <div className="space-y-4 mb-8">
+              <div className="p-4 rounded-xl bg-secondary/60 border border-border/80 flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-1">
+                    What's Included
+                  </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {activeSubService.sub.includes}
+                  </p>
+                </div>
               </div>
-            </div>
-
-            {/* Tech Stack Tags */}
-            <div className="mb-8">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                Technologies & Frameworks Employed
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedServiceModal.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 rounded-lg bg-secondary border border-border text-xs font-semibold text-primary"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="p-4 rounded-xl bg-secondary/60 border border-border/80 flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-1">
+                    How We Deliver It
+                  </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {activeSubService.sub.delivery}
+                  </p>
+                </div>
+              </div>
+              <div className="p-4 rounded-xl bg-secondary/60 border border-border/80 flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-1">
+                    The Value It Provides
+                  </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {activeSubService.sub.value}
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -595,14 +660,14 @@ export default function OurServices() {
             <div className="pt-6 border-t border-border flex items-center justify-end gap-4">
               <button
                 type="button"
-                onClick={() => setActiveModal(null)}
+                onClick={() => setActiveSubService(null)}
                 className="px-5 py-2.5 rounded-full bg-secondary text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
               >
-                Close Specifications
+                Close
               </button>
               <a
                 href="#contact"
-                onClick={() => setActiveModal(null)}
+                onClick={() => setActiveSubService(null)}
                 className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-extrabold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-md"
               >
                 Inquire This Service

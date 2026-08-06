@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import MouseFollower from "@/components/MouseFollower";
+import BottomEdgeBlur from "@/components/BottomEdgeBlur";
 import Hero from "@/components/Hero";
 import BrandMarquee from "@/components/BrandMarquee";
 import OurServices from "@/components/OurServices";
@@ -13,6 +15,7 @@ import Chatbot from "@/components/Chatbot";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+      <MouseFollower />
       <Navbar />
       <Hero />
       <BrandMarquee />
@@ -32,6 +35,8 @@ export default function Home() {
       <Footer />
       {/* Floating Interactive Chatbot Widget */}
       <Chatbot />
+      {/* Subtle bottom viewport edge blur/fade (iOS-style scroll edge) */}
+      <BottomEdgeBlur />
     </main>
   );
 }

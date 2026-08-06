@@ -94,7 +94,7 @@ export default function Chatbot() {
         botResponse = {
           id: (Date.now() + 1).toString(),
           sender: "bot",
-          text: "You can reach out to us directly:\n• Email: info@ztalab.com\n• WhatsApp: +8801976540046\n• Facebook: facebook.com/ztalab\n• Location: Dhaka, Bangladesh",
+          text: "You can reach out to us directly:\n• Email: info@ztalab.com\n• WhatsApp: +880 1881-064859\n• Facebook: facebook.com/ztalab\n• Location: Dhaka, Bangladesh",
           cta: {
             text: "Go to Contact Form",
             href: "#contact",
@@ -110,7 +110,7 @@ export default function Chatbot() {
           text: "Click below to start an instant WhatsApp conversation with our founders and technical team!",
           cta: {
             text: "Open WhatsApp Chat",
-            href: "https://wa.me/8801976540046",
+            href: "https://wa.me/8801881064859",
             icon: "whatsapp",
           },
         };
@@ -169,7 +169,7 @@ export default function Chatbot() {
       lower.includes("number")
     ) {
       replyText =
-        "You can call us directly at +8801976540046 or +8801712345678!";
+        "You can call us directly at +880 1881-064859 or +8801712345678!";
     } else if (
       lower.includes("service") ||
       lower.includes("dev") ||
@@ -188,7 +188,7 @@ export default function Chatbot() {
         "Got it! Our team is available on WhatsApp or through our direct contact form.";
       ctaObj = {
         text: "Chat on WhatsApp",
-        href: "https://wa.me/8801976540046",
+        href: "https://wa.me/8801881064859",
         icon: "whatsapp",
       };
     }
@@ -218,7 +218,7 @@ export default function Chatbot() {
           aria-label="Open ZTA Lab Assistant"
         >
           <div className="relative">
-            <Bot className="w-6 h-6" />
+            <Bot className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full" />
           </div>
@@ -251,9 +251,9 @@ export default function Chatbot() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="p-2 rounded-full hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+              className="group p-2 rounded-full hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" />
             </button>
           </div>
 
@@ -289,13 +289,13 @@ export default function Chatbot() {
                       msg.cta.href.startsWith("http") ? "_blank" : "_self"
                     }
                     rel="noreferrer"
-                    className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground font-bold text-xs shadow-md hover:opacity-90 transition-opacity"
+                    className="group mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground font-bold text-xs shadow-md hover:opacity-90 transition-opacity"
                   >
                     {msg.cta.icon === "whatsapp" && (
                       <WhatsappIcon className="w-3.5 h-3.5" />
                     )}
                     <span>{msg.cta.text}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                 )}
 
@@ -333,9 +333,9 @@ export default function Chatbot() {
             />
             <button
               type="submit"
-              className="w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 transition-opacity shrink-0"
+              className="group w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 transition-opacity shrink-0"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ztalab.com"),
@@ -88,7 +89,7 @@ const jsonLd = {
   image: "https://ztalab.com/og%2Dimage.jpeg",
   description:
     "ZTA Lab is a creative technology agency founded by a team of passionate engineers and digital strategists.",
-  telephone: "+8801976540046",
+  telephone: "+8801881064859",
   email: "info@ztalab.com",
   address: {
     "@type": "PostalAddress",
@@ -100,7 +101,7 @@ const jsonLd = {
     "https://www.upwork.com/freelancers/~01cee739c8fe979924",
     "https://www.linkedin.com/company/zta-lab",
     "https://github.com/ztalab0",
-    "https://wa.me/8801976540046",
+    "https://wa.me/8801881064859",
   ],
 };
 
@@ -128,6 +129,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+        <LoadingScreen />
         {children}
       </body>
     </html>

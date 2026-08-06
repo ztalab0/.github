@@ -17,7 +17,7 @@ const projects: ProjectData[] = [
     title: "High-Performance E-Commerce & Web Platform",
     category: "Website Design & Development",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=800&q=80",
     description:
       "A fast, responsive e-commerce web platform engineered for maximum conversion, smooth checkout flow, and custom product catalog management.",
     client: "Aura Commerce",
@@ -35,7 +35,7 @@ const projects: ProjectData[] = [
     title: "Cross-Platform Mobile Application Suite",
     category: "App Development",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
     description:
       "Scalable Android & iOS mobile application featuring real-time data sync, user authentication, intuitive UI/UX design, and push notifications.",
     client: "Nexus App Ecosystem",
@@ -53,7 +53,7 @@ const projects: ProjectData[] = [
     title: "Data-Driven Digital Marketing Campaign",
     category: "Digital Marketing",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
     description:
       "Strategic SEO optimization, targeted Meta & Google Ads campaigns, and social media branding that increased client leads by 185%.",
     client: "Cipher Growth",
@@ -71,7 +71,7 @@ const projects: ProjectData[] = [
     title: "Custom Enterprise Web Portal & Brand Identity",
     category: "Website Design & Development",
     image:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80",
     description:
       "Bespoke business portal with interactive user dashboard, custom web workflows, and modern brand design system.",
     client: "Verde Living Group",
@@ -120,10 +120,10 @@ export default function CompletedProjects() {
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-extrabold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-extrabold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
             >
               <span>Request Custom Project</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
             </a>
           </div>
         </div>
@@ -197,11 +197,11 @@ export default function CompletedProjects() {
 
                     <div className="mt-6 pt-4 border-t border-border/30 flex items-center justify-between">
                       <span className="text-xs font-medium text-muted-foreground flex items-center gap-1 group-hover:text-foreground transition-colors">
-                        <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                        <ExternalLink className="w-3.5 h-3.5 text-primary transition-transform duration-300 group-hover:scale-110" />
                         <span>View Project Details</span>
                       </span>
                       <span className="w-10 h-10 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors duration-300">
-                        <ArrowUpRight className="w-5 h-5" />
+                        <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
                       </span>
                     </div>
                   </div>
