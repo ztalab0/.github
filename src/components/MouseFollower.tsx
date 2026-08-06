@@ -84,7 +84,7 @@ export default function MouseFollower() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(rafId);
     };
-  }, [isDesktop, isVisible]);
+  }, [isDesktop]);
 
   if (!isDesktop || !isVisible) return null;
 
