@@ -7,6 +7,8 @@ import {
   LinkedinIcon,
   GithubIcon,
   WhatsappIcon,
+  InstagramIcon,
+  PinterestIcon,
 } from "./SocialIcons";
 
 export default function Footer() {
@@ -152,6 +154,26 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <FacebookIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/weare.ztalab/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="ZTA Lab Instagram"
+                className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.pinterest.com/ztalab2026/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Pinterest"
+                title="ZTA Lab Pinterest"
+                className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+              >
+                <PinterestIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.upwork.com/freelancers/~01cee739c8fe979924"

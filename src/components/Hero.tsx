@@ -5,6 +5,8 @@ import {
   LinkedinIcon,
   GithubIcon,
   WhatsappIcon,
+  PinterestIcon,
+  InstagramIcon,
 } from "./SocialIcons";
 
 export default function Hero() {
@@ -41,6 +43,26 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <FacebookIcon className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.instagram.com/weare.ztalab/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            title="ZTA Lab Instagram"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
+          >
+            <InstagramIcon className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.pinterest.com/ztalab2026/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Pinterest"
+            title="ZTA Lab Pinterest"
+            className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
+          >
+            <PinterestIcon className="w-4 h-4" />
           </a>
           <a
             href="https://www.upwork.com/freelancers/~01cee739c8fe979924"
