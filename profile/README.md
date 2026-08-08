@@ -1,99 +1,115 @@
 <div align="center">
 
   <!-- Header Animated Banner -->
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=38&duration=3000&pause=1000&color=26E09C&center=true&vCenter=true&width=750&height=70&lines=ZTA+LAB+%7C+Digital+Engineering+%26+AI;Fueling+Business+Growth+With+Innovation;Architecting+High-Performance+Digital+Products" alt="ZTA LAB Header" />
+  <img src="https://readme-typing-svg.demolab.com?font=Alatsi&weight=700&size=38&duration=3000&pause=1000&color=26E09C&center=true&vCenter=true&width=750&height=70&lines=ZTA+Lab+%7C+Build.+Launch.+Grow.;High-Performance+Websites+%26+Applications;AI+Automation+%26+Digital+Marketing" alt="ZTA Lab Header" />
 
   <p align="center">
-    <strong>Architecting High-Performance Web Software, AI Workflows & Digital Product Systems</strong>
+    <strong>At ZTA Lab, we craft high-performance websites, powerful applications, and data-driven digital marketing strategies to help businesses scale faster.</strong>
   </p>
 
   <!-- Status & Metrics Badges -->
   <p align="center">
-    <a href="https://ztalab.com"><img src="https://img.shields.io/badge/Official__Portal-ZTA__LAB-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Official Portal"></a>
-    <a href="#impact"><img src="https://img.shields.io/badge/Completed__Projects-25K%2B-0B2B26?style=for-the-badge&logo=rocket&logoColor=26E09C" alt="Completed Projects"></a>
-    <a href="#about"><img src="https://img.shields.io/badge/Client__Retention-99.8%25-163832?style=for-the-badge&logo=check-circle&logoColor=26E09C" alt="Client Retention"></a>
-    <a href="mailto:hello@ztalab.com"><img src="https://img.shields.io/badge/Inquiry-hello%40ztalab.com-235347?style=for-the-badge&logo=gmail&logoColor=26E09C" alt="Email Direct"></a>
+    <a href="https://ztalab.com"><img src="https://img.shields.io/badge/Official__Portal-ZTA__Lab-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Official Portal"></a>
+    <a href="https://ztalab.com/#portfolio"><img src="https://img.shields.io/badge/Projects__Delivered-10%2B-0B2B26?style=for-the-badge&logo=rocket&logoColor=26E09C" alt="Projects Delivered"></a>
+    <a href="https://ztalab.com/#about"><img src="https://img.shields.io/badge/Client__Satisfaction-100%25-163832?style=for-the-badge&logo=check-circle&logoColor=26E09C" alt="Client Satisfaction"></a>
+    <a href="mailto:info@ztalab.com"><img src="https://img.shields.io/badge/Inquiry-info%40ztalab.com-235347?style=for-the-badge&logo=gmail&logoColor=26E09C" alt="Email Direct"></a>
   </p>
 
 </div>
 
 ---
 
-### 🌐 Executive Overview
+### 🌐 Who Are We
 
-**ZTA LAB** is a global digital engineering lab and creative agency. We build mission-critical enterprise web applications, AI automation ecosystems, high-availability cloud architecture, and award-winning digital brand experiences.
+**ZTA Lab** is a creative technology agency founded by a team of passionate engineers and digital strategists. We specialize in building scalable digital solutions—from modern websites to full-stack applications—combined with result-oriented marketing strategies.
 
-We partner with high-growth startups, market leaders, and global enterprises to accelerate digital transformation, scale technical infrastructure, and drive measurable revenue growth.
+Our mission is simple: **turn ideas into impactful digital experiences.** We believe in innovation, precision, and long-term partnerships.
 
 ---
 
-### 🎯 Core Capabilities & Services
+### 🛠️ Our Core Divisions & Services
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4>💻 Enterprise Web Engineering</h4>
-      <p>Building high-speed, secure, and resilient web applications designed for infinite scale, flawless SEO, and exceptional user experiences.</p>
+      <h4>🌐 Web & Software Development</h4>
+      <p>Full-stack websites (Next.js, React), high-converting e-commerce stores, custom client-tailored web/desktop tools, and database architecture built for speed and security.</p>
     </td>
     <td width="50%" valign="top">
-      <h4>🤖 AI & Autonomous Workflows</h4>
-      <p>Custom LLM integrations, document intelligence, automated operational pipelines, and predictive neural machine learning models.</p>
+      <h4>🤖 AI & Business Systems</h4>
+      <p>Seamless AI API integration (OpenAI/Gemini), 24/7 conversational AI sales agents, automated workflow middleware, and business process automation.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>☁️ Cloud Architecture & DevOps</h4>
-      <p>High-availability cloud infrastructure, Kubernetes orchestration, zero-trust security auditing, and automated CI/CD deployment pipelines.</p>
+      <h4>🎨 Brand Strategy & UI/UX</h4>
+      <p>Distinct visual identities, logo design, user-tested wireframes & interactive prototypes, short-form video editing, and AI-accelerated content creation.</p>
     </td>
     <td width="50%" valign="top">
-      <h4>🎨 Brand Strategy & UI/UX Systems</h4>
-      <p>World-class design systems, interactive product prototyping, conversion-driven visual identities, and comprehensive brand guidelines.</p>
+      <h4>📈 Digital Marketing & Growth</h4>
+      <p>Technical SEO audits, keyword ranking strategies, targeted Meta & Google Ads campaigns, and data-driven performance analytics.</p>
     </td>
   </tr>
 </table>
 
 ---
 
-### 📊 Proven Track Record & Global Impact
+### 📦 In-House Software Suite
+
+We build and license custom software solutions designed for business growth and operational automation:
+
+- ⚡ **ZTA Sales Bot Agent** — Autonomous AI sales & customer support assistant (24/7 lead nurturing).
+- 🔄 **ZTA Workflow Automator** — Lightweight middleware connecting webhooks, APIs, and automated cron pipelines.
+- 📊 **ZTA SEO & Growth Suite** — Real-time technical SEO auditor, sitemap inspector, and ranking analytics.
+
+---
+
+### 📊 Proven Agency Metrics
 
 <div align="center">
 
-|      Metric      |      Benchmark      | Description                                                         |
-| :--------------: | :-----------------: | :------------------------------------------------------------------ |
-|  🚀 **25,000+**  | Projects Delivered  | Successfully engineered across fintech, AI, eCommerce, & healthcare |
-|  🤝 **7,000+**   |    Happy Clients    | Global enterprise partners & visionary scale-ups                    |
-|    🏆 **95**     |   Industry Awards   | Recognized for technical precision & UX excellence                  |
-| ⏱️ **15+ Years** | Industry Experience | Delivering scalable digital product architecture                    |
-|   ⚡ **99.8%**   |  Client Retention   | Dedicated engineering support & long-term partnership               |
+| Metric | Benchmark | Description |
+| :---: | :---: | :--- |
+| 🚀 **10+** | Solutions Built | Full-stack web applications, e-commerce stores, & AI systems |
+| ⚡ **100%** | Client Satisfaction | Tailored solutions with continuous client communication |
+| ⏱️ **100%** | On-Time Delivery | Agile engineering sprint execution and rapid deployment |
+| 💬 **24/7** | Support Coverage | Dedicated technical maintenance & customer consultation |
 
 </div>
+
+---
+
+### 👥 Leadership Team
+
+- 👨‍💻 **Zul Ikram Musaddik Rayat** — *Founder, Lead Backend & Cloud* ([GitHub](https://github.com/devrayat000) \| [LinkedIn](https://www.linkedin.com/in/zim-rayat/))
+- 💼 **Tamim Ahmed** — *Founder, Business & Operations* ([LinkedIn](https://www.linkedin.com/in/tamim-ahmed19/))
+- 🎨 **Abir Hossen** — *Founder, Lead Frontend* ([LinkedIn](https://www.linkedin.com/in/abirhossen54321/))
 
 ---
 
 ### 🛠️ Core Technology Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+  <img src="https://img.shields.io/badge/OpenAI_/_Gemini-412991?style=for-the-badge&logo=openai&logoColor=white" alt="AI Models" />
 </p>
 
 ---
 
 <div align="center">
 
-### 📬 Partner With ZTA LAB
+### 📬 Partner With ZTA Lab
 
-Have a project in mind or need expert technical consultation? Reach out directly to our project strategists.
+Have a project in mind or need expert technical consultation? Reach out directly to our team:
 
-**Live Portal**: [https://ztalab.com](https://ztalab.com) &nbsp;|&nbsp;
-**Direct Email**: [hello@ztalab.com](mailto:hello@ztalab.com) &nbsp;|&nbsp;
-**Phone Line**: (603) 555-0123
+**Official Website**: [https://ztalab.com](https://ztalab.com) &nbsp;|&nbsp;
+**Direct Email**: [info@ztalab.com](mailto:info@ztalab.com) &nbsp;|&nbsp;
+**WhatsApp Direct**: [+880 1881-064859](https://wa.me/8801881064859)
 
 <sub><strong>Headquarters</strong>: 900 Greek Row Drive, Arlington, Texas 76013</sub>
 
