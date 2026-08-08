@@ -94,7 +94,7 @@ export default function Chatbot() {
         botResponse = {
           id: (Date.now() + 1).toString(),
           sender: "bot",
-          text: "You can reach out to us directly:\n• Email: info@ztalab.com\n• WhatsApp: +880 1881-064859\n• Facebook: facebook.com/ztalab\n• Location: Dhaka, Bangladesh",
+          text: "You can reach out to us directly:\n• Email: info@ztalab.com\n• WhatsApp: +880 1881-064859\n• Facebook: facebook.com/ztalab\n• Location: 900 Greek Row Drive, Arlington, TX 76013",
           cta: {
             text: "Go to Contact Form",
             href: "#contact",

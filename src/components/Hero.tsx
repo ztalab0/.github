@@ -200,7 +200,7 @@ export default function Hero() {
               <div className="pr-3">
                 <p className="text-xs font-bold text-foreground">ZTA Lab</p>
                 <p className="text-[10px] text-muted-foreground">
-                  Dhaka, Bangladesh
+                  Arlington, TX 76013
                 </p>
               </div>
             </div>

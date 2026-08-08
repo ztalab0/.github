@@ -95,6 +95,6 @@ Have a project in mind or need expert technical consultation? Reach out directly
 **Direct Email**: [hello@ztalab.com](mailto:hello@ztalab.com) &nbsp;|&nbsp;
 **Phone Line**: (603) 555-0123
 
-<sub><strong>Headquarters</strong>: House 178/196, Avenue 01, Uttara DOHS, Dhaka, Bangladesh</sub>
+<sub><strong>Headquarters</strong>: 900 Greek Row Drive, Arlington, Texas 76013</sub>
 
 </div>

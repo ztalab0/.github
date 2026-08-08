@@ -21,7 +21,8 @@ export const metadata: Metadata = {
     "Digital Marketing",
     "SEO Optimization",
     "Software Engineering",
-    "Dhaka Agency",
+    "Arlington Agency",
+    "Texas Agency",
   ],
   authors: [{ name: "ZTA Lab", url: "https://ztalab.com" }],
   creator: "ZTA Lab",
@@ -93,8 +94,11 @@ const jsonLd = {
   email: "info@ztalab.com",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dhaka",
-    addressCountry: "Bangladesh",
+    streetAddress: "900 Greek Row Drive",
+    addressLocality: "Arlington",
+    addressRegion: "TX",
+    postalCode: "76013",
+    addressCountry: "US",
   },
   sameAs: [
     "https://www.facebook.com/profile.php?id=61592197508930",

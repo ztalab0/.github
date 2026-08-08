@@ -112,7 +112,7 @@ export default function ContactSection() {
                     Location
                   </span>
                   <p className="text-sm sm:text-base font-bold text-foreground mt-0.5">
-                    Dhaka, Bangladesh
+                    900 Greek Row Drive, Arlington, TX 76013
                   </p>
                 </div>
               </div>

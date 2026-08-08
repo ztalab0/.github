@@ -86,7 +86,7 @@ To become a leading digital solutions provider by delivering innovative, efficie
 * Email: info@ztalab.com  
 * Phone: \+8801976540046  
 * Whatsapp: \+8801976540046  
-* Location: Dhaka, Bangladesh
+* Location: 900 Greek Row Drive, Arlington, TX 76013
 
 **Contact Form Fields:**
 

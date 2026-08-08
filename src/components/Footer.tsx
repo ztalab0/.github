@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="space-y-2 pt-2 text-xs text-gray-300">
               <div className="group flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5" />
-                <span>Dhaka, Bangladesh</span>
+                <span>900 Greek Row Drive, Arlington, TX 76013</span>
               </div>
               <div className="group flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0 transition-transform duration-300 group-hover:-rotate-12" />
