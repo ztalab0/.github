@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy, Mail, Send, Sparkles, X } from "lucide-react";
+import { Check, Copy, Globe, Mail, Send, Sparkles, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 
@@ -13,6 +13,7 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/zim-rayat/",
     github: "https://github.com/devrayat000",
     email: "mailto:rayat@ztalab.com",
+    portfolio: undefined as string | undefined,
   },
   {
     name: "Tamim Ahmed",
@@ -21,6 +22,7 @@ const teamMembers = [
     image: "/assets/people/tamim.png",
     linkedin: "https://www.linkedin.com/in/tamim-ahmed19/",
     email: "mailto:tamim@ztalab.com",
+    portfolio: undefined as string | undefined,
   },
   {
     name: "Abir Hossen",
@@ -29,6 +31,7 @@ const teamMembers = [
     image: "/assets/people/abir.jpeg",
     linkedin: "https://www.linkedin.com/in/abirhossen54321/",
     email: "mailto:abir@ztalab.com",
+    portfolio: "https://abirhossen.com/",
   },
 ];
 
@@ -145,6 +148,18 @@ export default function TeamSection() {
 
               {/* Social Action Footer */}
               <div className="px-6 pb-6 pt-2 border-t border-border/40 flex items-center justify-center gap-3 text-gray-400">
+                {member.portfolio && (
+                  <a
+                    href={member.portfolio}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${member.name} Portfolio`}
+                    title="Portfolio Website"
+                    className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+                  >
+                    <Globe className="w-4 h-4" />
+                  </a>
+                )}
                 {member.linkedin && (
                   <a
                     href={member.linkedin}

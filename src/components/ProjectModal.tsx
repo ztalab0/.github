@@ -12,6 +12,7 @@ export interface ProjectData {
   year: string;
   tags: string[];
   deliverables: string[];
+  liveUrl?: string;
 }
 
 interface ProjectModalProps {
@@ -68,7 +69,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </p>
             </div>
             <div>
-              <span className="text-xs text-muted-foreground">Industry</span>
+              <span className="text-xs text-muted-foreground">Category</span>
               <p className="text-sm font-bold text-primary mt-0.5">
                 {project.category}
               </p>
@@ -114,7 +115,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Modal Footer */}
-        <div className="p-6 border-t border-border/60 bg-background/80 flex justify-end gap-4">
+        <div className="p-6 border-t border-border/60 bg-background/80 flex flex-wrap items-center justify-end gap-3 sm:gap-4">
           <button
             type="button"
             onClick={onClose}
@@ -122,6 +123,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           >
             Close
           </button>
+
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-sm transition-all"
+            >
+              <span>Visit Live Site</span>
+              <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />
+            </a>
+          )}
+
           <a
             href="#contact"
             onClick={onClose}
