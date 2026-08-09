@@ -57,7 +57,12 @@ const projects: ProjectData[] = [
       "A bold gym & fitness brand site with a fierce red identity, deployed globally on Cloudflare Workers for instant edge delivery.",
     client: "Fitnex Gym BD",
     year: "2025",
-    tags: ["Cloudflare Workers", "Edge-deployed", "Cursor + Claude", "Web Design"],
+    tags: [
+      "Cloudflare Workers",
+      "Edge-deployed",
+      "Cursor + Claude",
+      "Web Design",
+    ],
     deliverables: [
       "High-Performance Web App",
       "Edge Hosting",
@@ -70,7 +75,8 @@ const projects: ProjectData[] = [
     id: "4",
     title: "Vault Fintech App & Wallet Suite",
     category: "App Development",
-    image: "https://abirhossen.com/assets/images/designs/vault-fintech-app.webp",
+    image:
+      "https://abirhossen.com/assets/images/designs/vault-fintech-app.webp",
     description:
       "Modern fintech banking interface and app design suite engineered for secure financial transactions, user analytics, and real-time wallet tracking.",
     client: "Vault Fintech",
@@ -88,7 +94,8 @@ const projects: ProjectData[] = [
     id: "5",
     title: "Maison Lumière & Lumea Luxury Brand Suite",
     category: "AI Design & Branding",
-    image: "https://abirhossen.com/assets/images/designs/maison-lumiere-before-after.webp",
+    image:
+      "https://abirhossen.com/assets/images/designs/maison-lumiere-before-after.webp",
     description:
       "High-end luxury packaging, editorial imagery, and digital brand identity created using AI generation (GPT Image 2) and precision Photoshop retouching.",
     client: "Maison Lumière",
@@ -99,24 +106,6 @@ const projects: ProjectData[] = [
       "Editorial Brand Campaign",
       "Social Assets",
       "AI Art Direction",
-    ],
-    liveUrl: "https://abirhossen.com/",
-  },
-  {
-    id: "6",
-    title: "Higgsfield AI UGC Video & Motion Reels",
-    category: "Video & Digital Marketing",
-    image: "https://abirhossen.com/assets/images/hero/hero-main.webp",
-    description:
-      "Native social video ads and cinematic UGC reels directed and produced entirely with Higgsfield AI, After Effects, and Premiere Pro without traditional film crews.",
-    client: "Global Brands",
-    year: "2025",
-    tags: ["Higgsfield AI", "After Effects", "Premiere Pro", "UGC Video"],
-    deliverables: [
-      "AI UGC Video Ads",
-      "Motion Graphics",
-      "Sound Design",
-      "Social Campaign Formats",
     ],
     liveUrl: "https://abirhossen.com/",
   },
