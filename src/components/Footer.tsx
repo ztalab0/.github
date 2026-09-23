@@ -1,14 +1,15 @@
 "use client";
 
 import { ArrowUp, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 import {
   FacebookIcon,
-  UpworkIcon,
-  LinkedinIcon,
   GithubIcon,
-  WhatsappIcon,
   InstagramIcon,
+  LinkedinIcon,
   PinterestIcon,
+  UpworkIcon,
+  WhatsappIcon,
 } from "./SocialIcons";
 
 export default function Footer() {
@@ -224,18 +225,18 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} ZTA Lab. All Rights Reserved.</p>
 
           <div className="flex items-center gap-6">
-            <a
-              href="#contact"
+            <Link
+              href="/terms"
               className="hover:text-foreground transition-colors"
             >
               Terms & Conditions
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/privacy"
               className="hover:text-foreground transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
 
             {/* Back To Top Button */}
             <button

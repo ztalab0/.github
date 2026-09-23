@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import LoadingScreen from "@/components/LoadingScreen";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ztalab.com"),
@@ -84,12 +84,15 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://ztalab.com/#organization",
   name: "ZTA Lab",
   url: "https://ztalab.com",
   logo: "https://ztalab.com/assets/LOGO/SVG%20Lgos/Brand%20Color%202.svg",
-  image: "https://ztalab.com/og%2Dimage.jpeg",
+  image: "https://ztalab.com/og-image.jpeg",
   description:
-    "ZTA Lab is a creative technology agency founded by a team of passionate engineers and digital strategists.",
+    "ZTA Lab is a creative technology agency crafting high-performance websites, powerful applications, custom software, and data-driven digital growth strategies.",
+  priceRange: "$$",
+  currenciesAccepted: "USD",
   telephone: "+8801881064859",
   email: "info@ztalab.com",
   address: {
@@ -100,8 +103,19 @@ const jsonLd = {
     postalCode: "76013",
     addressCountry: "US",
   },
+  knowsAbout: [
+    "Web Design & Development",
+    "Full-Stack Software Engineering",
+    "Mobile Application Development",
+    "AI Agent & Workflow Automation",
+    "Search Engine Optimization (SEO)",
+    "Digital Marketing & Brand Strategy",
+    "UI/UX Design",
+  ],
   sameAs: [
     "https://www.facebook.com/profile.php?id=61592197508930",
+    "https://www.instagram.com/weare.ztalab/",
+    "https://www.pinterest.com/ztalab2026/",
     "https://www.upwork.com/freelancers/~01cee739c8fe979924",
     "https://www.linkedin.com/company/zta-lab",
     "https://github.com/ztalab0",

@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import {
   FacebookIcon,
-  UpworkIcon,
-  LinkedinIcon,
   GithubIcon,
-  WhatsappIcon,
-  PinterestIcon,
   InstagramIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  UpworkIcon,
+  WhatsappIcon,
 } from "./SocialIcons";
 
 export default function Hero() {
@@ -111,11 +111,16 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Hero Left Content Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Single Strong Headline */}
+            {/* Eyebrow / Kicker */}
+            <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.25em] text-primary uppercase mb-3">
+              Build. Launch. Grow.
+            </span>
+
+            {/* Single Strong Headline matching page title & main keywords */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-foreground leading-[1.1] tracking-tight">
-              Build. Launch.{" "}
+              Creative Technology &{" "}
               <span className="text-primary drop-shadow-[0_0_25px_rgba(38,224,156,0.35)]">
-                Grow.
+                Digital Agency
               </span>
             </h1>
 

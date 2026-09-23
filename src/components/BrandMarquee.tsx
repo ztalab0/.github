@@ -23,26 +23,26 @@ export default function BrandMarquee() {
       <div className="relative w-full overflow-hidden py-6">
         {/* Smooth fade overlays on left/right — color wash + gradually-fading blur for a seamless edge */}
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-linear-to-r from-card to-transparent z-10 pointer-events-none" />
-        <div
-          className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 pointer-events-none backdrop-blur-md [mask-image:linear-gradient(to_right,black,transparent)] [-webkit-mask-image:linear-gradient(to_right,black,transparent)]"
-        />
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 pointer-events-none backdrop-blur-md [mask-image:linear-gradient(to_right,black,transparent)] [-webkit-mask-image:linear-gradient(to_right,black,transparent)]" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-linear-to-l from-card to-transparent z-10 pointer-events-none" />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 pointer-events-none backdrop-blur-md [mask-image:linear-gradient(to_left,black,transparent)] [-webkit-mask-image:linear-gradient(to_left,black,transparent)]"
-        />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 pointer-events-none backdrop-blur-md [mask-image:linear-gradient(to_left,black,transparent)] [-webkit-mask-image:linear-gradient(to_left,black,transparent)]" />
 
         <div className="flex animate-marquee-slow items-center gap-x-10 sm:gap-x-16 bg-card isolate">
           {loopedLogos.map((brand, idx) => {
-            const name = brand.split(".")[0];
+            const cleanName = brand
+              .replace(/\.[^/.]+$/, "")
+              .replace(/[-_]edited/gi, "")
+              .replace(/[-_]/g, " ")
+              .trim();
             const publicUrl = `/assets/collab/${brand}`;
             return (
               <div
-                key={`${name}-${idx}`}
+                key={`${cleanName}-${idx}`}
                 className="h-10 w-28 sm:h-12 sm:w-32 flex items-center justify-center shrink-0"
               >
                 <img
                   src={publicUrl}
-                  alt={name}
+                  alt={`${cleanName} Logo`}
                   draggable={false}
                   aria-hidden={idx >= brandLogos.length}
                   className="max-h-full max-w-full object-contain grayscale brightness-[1.4] contrast-[0.85] opacity-90 hover:opacity-100 transition-opacity duration-300"
