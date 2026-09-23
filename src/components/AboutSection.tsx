@@ -85,7 +85,7 @@ export default function AboutSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
-              Creative Technology & Digital Agency
+              Pioneering Intelligent Engineering &amp; Digital Growth
             </h2>
 
             <p className="mt-5 text-base text-gray-300 leading-relaxed">

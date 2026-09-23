@@ -39,6 +39,7 @@ export default function Navbar() {
           {/* Official Brand Logo - Scaled Up & Visible */}
           <a
             href="#hero"
+            aria-label="ZTA Lab - Home"
             className="relative flex items-center gap-3 group h-12 sm:h-14 md:h-16"
           >
             <img
@@ -52,6 +53,7 @@ export default function Navbar() {
               aria-hidden="true"
               className="absolute inset-y-0 left-0 h-12 sm:h-14 md:h-16 w-auto object-contain opacity-0 scale-105 transition-all duration-300 group-hover:opacity-100 drop-shadow-[0_0_16px_rgba(38,224,156,0.65)]"
             />
+            <span className="sr-only">ZTA Lab - Home</span>
           </a>
 
           {/* Desktop Nav Links */}

@@ -580,9 +580,9 @@ export default function OurServices() {
                   <span className="text-3xl font-black text-primary/40 block mb-2 font-mono">
                     {p.step}
                   </span>
-                  <h4 className="text-base font-bold text-foreground mb-1">
+                  <p className="text-base font-bold text-foreground mb-1">
                     {p.title}
-                  </h4>
+                  </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {p.desc}
                   </p>

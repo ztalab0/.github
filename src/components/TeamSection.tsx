@@ -130,7 +130,7 @@ export default function TeamSection() {
                 <div className="relative w-full aspect-3/4 overflow-hidden bg-secondary">
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name} - ${member.role} at ZTA Lab`}
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-card via-card/10 to-transparent opacity-90" />
@@ -158,6 +158,7 @@ export default function TeamSection() {
                     className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <Globe className="w-4 h-4" />
+                    <span className="sr-only">{member.name}&apos;s Portfolio</span>
                   </a>
                 )}
                 {member.linkedin && (
@@ -169,6 +170,7 @@ export default function TeamSection() {
                     className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <LinkedinIcon className="w-4 h-4" />
+                    <span className="sr-only">{member.name}&apos;s LinkedIn</span>
                   </a>
                 )}
                 {member.github && (
@@ -180,6 +182,7 @@ export default function TeamSection() {
                     className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
                   >
                     <GithubIcon className="w-4 h-4" />
+                    <span className="sr-only">{member.name}&apos;s GitHub</span>
                   </a>
                 )}
                 {member.email && (

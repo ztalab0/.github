@@ -22,12 +22,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row with Logo & Quick Contact Callout */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-border/60">
-          <a href="#hero" className="flex items-center gap-3 group">
+          <a href="#hero" aria-label="ZTA Lab - Back to Home" className="flex items-center gap-3 group">
             <img
               src="/assets/LOGO/SVG Lgos/White with no BG.svg"
               alt="ZTA Lab Logo"
               className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
             />
+            <span className="sr-only">ZTA Lab - Back to Top</span>
           </a>
 
           {/* Quick Contact Callout Box */}
@@ -89,16 +90,16 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">
+            <p className="text-sm font-bold uppercase tracking-wider text-foreground">
               Navigation
-            </h4>
+            </p>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
                 <a
                   href="#services"
                   className="hover:text-primary transition-colors"
                 >
-                  Services
+                  Our Services
                 </a>
               </li>
               <li>
@@ -106,7 +107,7 @@ export default function Footer() {
                   href="#portfolio"
                   className="hover:text-primary transition-colors"
                 >
-                  Portfolio
+                  Featured Portfolio
                 </a>
               </li>
               <li>
@@ -114,7 +115,7 @@ export default function Footer() {
                   href="#about"
                   className="hover:text-primary transition-colors"
                 >
-                  Who Are We
+                  About ZTA Lab
                 </a>
               </li>
               <li>
@@ -122,7 +123,7 @@ export default function Footer() {
                   href="#team"
                   className="hover:text-primary transition-colors"
                 >
-                  Team
+                  Our Team
                 </a>
               </li>
               <li>
@@ -130,7 +131,7 @@ export default function Footer() {
                   href="#contact"
                   className="hover:text-primary transition-colors"
                 >
-                  Contact Us
+                  Contact Our Team
                 </a>
               </li>
             </ul>
@@ -138,9 +139,9 @@ export default function Footer() {
 
           {/* Column 3: Connect & Socials */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">
+            <p className="text-sm font-bold uppercase tracking-wider text-foreground">
               Follow ZTA Lab
-            </h4>
+            </p>
             <p className="text-xs text-muted-foreground">
               Stay connected with our latest software releases, AI solutions,
               and project highlights.
@@ -155,6 +156,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <FacebookIcon className="w-4 h-4" />
+                <span className="sr-only">Follow ZTA Lab on Facebook</span>
               </a>
               <a
                 href="https://www.instagram.com/weare.ztalab/"
@@ -165,6 +167,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <InstagramIcon className="w-4 h-4" />
+                <span className="sr-only">Follow ZTA Lab on Instagram</span>
               </a>
               <a
                 href="https://www.pinterest.com/ztalab2026/"
@@ -175,6 +178,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <PinterestIcon className="w-4 h-4" />
+                <span className="sr-only">Follow ZTA Lab on Pinterest</span>
               </a>
               <a
                 href="https://www.upwork.com/freelancers/~01cee739c8fe979924"
@@ -185,6 +189,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <UpworkIcon className="w-4 h-4" />
+                <span className="sr-only">Hire ZTA Lab on Upwork</span>
               </a>
               <a
                 href="https://www.linkedin.com/company/zta-lab"
@@ -195,6 +200,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <LinkedinIcon className="w-4 h-4" />
+                <span className="sr-only">Follow ZTA Lab on LinkedIn</span>
               </a>
               <a
                 href="https://github.com/ztalab0"
@@ -205,6 +211,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <GithubIcon className="w-4 h-4" />
+                <span className="sr-only">View ZTA Lab GitHub Profile</span>
               </a>
               <a
                 href="https://wa.me/8801881064859"
@@ -215,6 +222,7 @@ export default function Footer() {
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
                 <WhatsappIcon className="w-4 h-4" />
+                <span className="sr-only">Message ZTA Lab on WhatsApp</span>
               </a>
             </div>
           </div>

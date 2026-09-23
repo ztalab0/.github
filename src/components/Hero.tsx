@@ -43,6 +43,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <FacebookIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on Facebook</span>
           </a>
           <a
             href="https://www.instagram.com/weare.ztalab/"
@@ -53,6 +54,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <InstagramIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on Instagram</span>
           </a>
           <a
             href="https://www.pinterest.com/ztalab2026/"
@@ -63,6 +65,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <PinterestIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on Pinterest</span>
           </a>
           <a
             href="https://www.upwork.com/freelancers/~01cee739c8fe979924"
@@ -73,6 +76,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <UpworkIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on Upwork</span>
           </a>
           <a
             href="https://www.linkedin.com/company/zta-lab"
@@ -83,6 +87,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <LinkedinIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on LinkedIn</span>
           </a>
           <a
             href="https://github.com/ztalab0"
@@ -93,6 +98,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <GithubIcon className="w-4 h-4" />
+            <span className="sr-only">ZTA Lab on GitHub</span>
           </a>
           <a
             href="https://wa.me/8801881064859"
@@ -103,6 +109,7 @@ export default function Hero() {
             className="hover:text-primary transition-colors p-2 rounded-xl border border-transparent hover:border-border"
           >
             <WhatsappIcon className="w-4 h-4" />
+            <span className="sr-only">Chat with ZTA Lab on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -190,7 +197,7 @@ export default function Hero() {
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
-                  alt="ZTA Lab Digital Agency Team"
+                  alt="ZTA Lab Digital Agency Team - Creative Technology & Engineering"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-transparent" />

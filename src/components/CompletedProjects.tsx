@@ -196,7 +196,7 @@ export default function CompletedProjects() {
                   <div className="relative h-64 sm:h-80 w-full overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} - ${project.category} by ZTA Lab`}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-card via-card/20 to-transparent opacity-80" />

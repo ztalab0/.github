@@ -37,9 +37,9 @@ export default function ContactSection() {
           {/* Contact Details Sidebar */}
           <div className="lg:col-span-5 space-y-6">
             <div className="glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border space-y-6 sm:space-y-8 shadow-2xl">
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground border-b border-border/50 pb-4">
+              <p className="text-xl sm:text-2xl font-bold text-foreground border-b border-border/50 pb-4">
                 Get In Touch
-              </h3>
+              </p>
 
               <div className="group flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center shrink-0 border border-border transition-transform duration-300 group-hover:scale-110">
