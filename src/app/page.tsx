@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import BottomEdgeBlur from "@/components/BottomEdgeBlur";
 import Hero from "@/components/Hero";
-import BrandMarquee from "@/components/BrandMarquee";
 import OurServices from "@/components/OurServices";
 import CompletedProjects from "@/components/CompletedProjects";
 import AboutSection from "@/components/AboutSection";
@@ -16,7 +15,6 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
-      <BrandMarquee />
       {/* 1st Tab in Nav: Our Services */}
       <OurServices />
       {/* 2nd Tab in Nav: Portfolio */}
